@@ -1,0 +1,379 @@
+2024-09-09 18:58:36,567 :INFO : test_form_submit : text message received from application is ×
+Success! The Form has been submitted successfully!.
+2024-09-09 18:58:36,568 :INFO : test_form_submit : Refreshing the browser to clear data
+2024-09-09 18:58:37,093 :INFO : test_form_submit : text message received from application is ×
+Success! The Form has been submitted successfully!.
+2024-09-09 18:58:37,093 :INFO : test_form_submit : Refreshing the browser to clear data
+2024-09-09 18:58:41,278 :INFO : test_e2e : country sent to application is india
+2024-09-09 18:58:46,462 :INFO : test_e2e : text message received from application is ×
+Success! Thank you! Your order will be delivered in next few weeks :-).
+2024-09-09 19:07:47,001 :INFO : test_form_submit : text message received from application is ×
+Success! The Form has been submitted successfully!.
+2024-09-09 19:07:47,002 :INFO : test_form_submit : Refreshing the browser to clear data
+2024-09-09 19:07:47,602 :INFO : test_form_submit : text message received from application is ×
+Success! The Form has been submitted successfully!.
+2024-09-09 19:07:47,603 :INFO : test_form_submit : Refreshing the browser to clear data
+2024-09-09 19:07:51,979 :INFO : test_e2e : country sent to application is india
+2024-09-09 19:07:57,121 :INFO : test_e2e : text message received from application is ×
+Success! Thank you! Your order will be delivered in next few weeks :-).
+2024-09-09 19:10:29,182 :INFO : test_form_submit : text message received from application is ×
+Success! The Form has been submitted successfully!.
+2024-09-09 19:10:29,182 :INFO : test_form_submit : Refreshing the browser to clear data
+2024-09-09 19:10:29,729 :INFO : test_form_submit : text message received from application is ×
+Success! The Form has been submitted successfully!.
+2024-09-09 19:10:29,729 :INFO : test_form_submit : Refreshing the browser to clear data
+2024-09-09 19:10:34,083 :INFO : test_e2e : country sent to application is india
+2024-09-09 19:10:56,632 :INFO : test_form_submit : text message received from application is ×
+Success! The Form has been submitted successfully!.
+2024-09-09 19:10:56,632 :INFO : test_form_submit : Refreshing the browser to clear data
+2024-09-09 19:10:57,149 :INFO : test_form_submit : text message received from application is ×
+Success! The Form has been submitted successfully!.
+2024-09-09 19:10:57,149 :INFO : test_form_submit : Refreshing the browser to clear data
+2024-09-09 19:11:01,407 :INFO : test_e2e : country sent to application is india
+2024-09-09 19:11:06,643 :INFO : test_e2e : text message received from application is ×
+Success! Thank you! Your order will be delivered in next few weeks :-).
+2024-09-09 19:14:52,741 :INFO : test_form_submit : text message received from application is ×
+Success! The Form has been submitted successfully!.
+2024-09-09 19:14:52,742 :INFO : test_form_submit : Refreshing the browser to clear data
+2024-09-09 19:14:53,321 :INFO : test_form_submit : text message received from application is ×
+Success! The Form has been submitted successfully!.
+2024-09-09 19:14:53,321 :INFO : test_form_submit : Refreshing the browser to clear data
+2024-09-09 19:14:57,657 :INFO : test_e2e : country sent to application is india
+2024-09-09 19:15:02,814 :INFO : test_e2e : text message received from application is ×
+Success! Thank you! Your order will be delivered in next few weeks :-).
+2024-09-09 19:15:23,931 :INFO : test_form_submit : text message received from application is ×
+Success! The Form has been submitted successfully!.
+2024-09-09 19:15:23,931 :INFO : test_form_submit : Refreshing the browser to clear data
+2024-09-09 19:15:24,479 :INFO : test_form_submit : text message received from application is ×
+Success! The Form has been submitted successfully!.
+2024-09-09 19:15:24,479 :INFO : test_form_submit : Refreshing the browser to clear data
+2024-09-09 19:15:28,931 :INFO : test_e2e : country sent to application is india
+2024-09-09 19:15:34,049 :INFO : test_e2e : text message received from application is ×
+Success! Thank you! Your order will be delivered in next few weeks :-).
+2024-09-09 19:17:21,440 :INFO : test_form_submit : text message received from application is ×
+Success! The Form has been submitted successfully!.
+2024-09-09 19:17:21,441 :INFO : test_form_submit : Refreshing the browser to clear data
+2024-09-09 19:17:22,080 :INFO : test_form_submit : text message received from application is ×
+Success! The Form has been submitted successfully!.
+2024-09-09 19:17:22,080 :INFO : test_form_submit : Refreshing the browser to clear data
+2024-09-09 19:17:26,453 :INFO : test_e2e : country sent to application is india
+2024-09-09 19:17:31,593 :INFO : test_e2e : text message received from application is ×
+Success! Thank you! Your order will be delivered in next few weeks :-).
+2024-09-09 19:25:46,838 :INFO : test_form_submit : text message received from application is ×
+Success! The Form has been submitted successfully!.
+2024-09-09 19:25:46,838 :INFO : test_form_submit : Refreshing the browser to clear data
+2024-09-09 19:25:47,373 :INFO : test_form_submit : text message received from application is ×
+Success! The Form has been submitted successfully!.
+2024-09-09 19:25:47,374 :INFO : test_form_submit : Refreshing the browser to clear data
+2024-09-09 19:25:51,769 :INFO : test_e2e : country sent to application is india
+2024-09-09 19:25:56,941 :INFO : test_e2e : text message received from application is ×
+Success! Thank you! Your order will be delivered in next few weeks :-).
+2024-09-09 19:43:55,095 :INFO : test_form_submit : text message received from application is ×
+Success! The Form has been submitted successfully!.
+2024-09-09 19:43:55,097 :INFO : test_form_submit : Refreshing the browser to clear data
+2024-09-09 19:43:55,675 :INFO : test_form_submit : text message received from application is ×
+Success! The Form has been submitted successfully!.
+2024-09-09 19:43:55,675 :INFO : test_form_submit : Refreshing the browser to clear data
+2024-09-09 19:44:00,010 :INFO : test_e2e : country sent to application is india
+2024-09-09 19:44:05,167 :INFO : test_e2e : text message received from application is ×
+Success! Thank you! Your order will be delivered in next few weeks :-).
+2024-09-09 19:45:27,972 :INFO : test_form_submit : text message received from application is ×
+Success! The Form has been submitted successfully!.
+2024-09-09 19:45:27,972 :INFO : test_form_submit : Refreshing the browser to clear data
+2024-09-09 19:45:28,522 :INFO : test_form_submit : text message received from application is ×
+Success! The Form has been submitted successfully!.
+2024-09-09 19:45:28,522 :INFO : test_form_submit : Refreshing the browser to clear data
+2024-09-09 19:45:32,879 :INFO : test_e2e : country sent to application is india
+2024-09-09 19:45:38,095 :INFO : test_e2e : text message received from application is ×
+Success! Thank you! Your order will be delivered in next few weeks :-).
+2024-09-09 19:49:05,351 :INFO : test_form_submit : text message received from application is ×
+Success! The Form has been submitted successfully!.
+2024-09-09 19:49:05,351 :INFO : test_form_submit : Refreshing the browser to clear data
+2024-09-09 19:49:05,901 :INFO : test_form_submit : text message received from application is ×
+Success! The Form has been submitted successfully!.
+2024-09-09 19:49:05,902 :INFO : test_form_submit : Refreshing the browser to clear data
+2024-09-09 19:49:10,260 :INFO : test_e2e : country sent to application is india
+2024-09-09 19:49:15,391 :INFO : test_e2e : text message received from application is ×
+Success! Thank you! Your order will be delivered in next few weeks :-).
+2024-09-09 19:50:23,461 :INFO : test_form_submit : text message received from application is ×
+Success! The Form has been submitted successfully!.
+2024-09-09 19:50:23,461 :INFO : test_form_submit : Refreshing the browser to clear data
+2024-09-09 19:50:23,996 :INFO : test_form_submit : text message received from application is ×
+Success! The Form has been submitted successfully!.
+2024-09-09 19:50:23,997 :INFO : test_form_submit : Refreshing the browser to clear data
+2024-09-09 19:50:28,368 :INFO : test_e2e : country sent to application is india
+2024-09-09 19:50:33,518 :INFO : test_e2e : text message received from application is ×
+Success! Thank you! Your order will be delivered in next few weeks :-).
+2024-09-09 19:55:51,204 :INFO : test_form_submit : text message received from application is ×
+Success! The Form has been submitted successfully!.
+2024-09-09 19:55:51,204 :INFO : test_form_submit : Refreshing the browser to clear data
+2024-09-09 19:55:51,728 :INFO : test_form_submit : text message received from application is ×
+Success! The Form has been submitted successfully!.
+2024-09-09 19:55:51,729 :INFO : test_form_submit : Refreshing the browser to clear data
+2024-09-09 19:55:56,152 :INFO : test_e2e : country sent to application is india
+2024-09-09 19:56:01,332 :INFO : test_e2e : text message received from application is ×
+Success! Thank you! Your order will be delivered in next few weeks :-).
+2024-09-09 20:01:26,661 :INFO : test_form_submit : text message received from application is ×
+Success! The Form has been submitted successfully!.
+2024-09-09 20:01:26,661 :INFO : test_form_submit : Refreshing the browser to clear data
+2024-09-09 20:01:27,224 :INFO : test_form_submit : text message received from application is ×
+Success! The Form has been submitted successfully!.
+2024-09-09 20:01:27,224 :INFO : test_form_submit : Refreshing the browser to clear data
+2024-09-09 20:01:31,556 :INFO : test_e2e : country sent to application is india
+2024-09-09 20:01:36,678 :INFO : test_e2e : text message received from application is ×
+Success! Thank you! Your order will be delivered in next few weeks :-).
+2024-09-09 20:03:02,094 :INFO : test_form_submit : text message received from application is ×
+Success! The Form has been submitted successfully!.
+2024-09-09 20:03:02,094 :INFO : test_form_submit : Refreshing the browser to clear data
+2024-09-09 20:03:02,613 :INFO : test_form_submit : text message received from application is ×
+Success! The Form has been submitted successfully!.
+2024-09-09 20:03:02,614 :INFO : test_form_submit : Refreshing the browser to clear data
+2024-09-09 20:03:06,949 :INFO : test_e2e : country sent to application is india
+2024-09-09 20:03:12,073 :INFO : test_e2e : text message received from application is ×
+Success! Thank you! Your order will be delivered in next few weeks :-).
+2024-09-09 20:04:51,540 :INFO : test_form_submit : text message received from application is ×
+Success! The Form has been submitted successfully!.
+2024-09-09 20:04:51,540 :INFO : test_form_submit : Refreshing the browser to clear data
+2024-09-09 20:04:52,099 :INFO : test_form_submit : text message received from application is ×
+Success! The Form has been submitted successfully!.
+2024-09-09 20:04:52,099 :INFO : test_form_submit : Refreshing the browser to clear data
+2024-09-09 20:04:56,497 :INFO : test_e2e : country sent to application is india
+2024-09-09 20:05:01,625 :INFO : test_e2e : text message received from application is ×
+Success! Thank you! Your order will be delivered in next few weeks :-).
+2024-09-09 20:06:21,759 :INFO : test_form_submit : text message received from application is ×
+Success! The Form has been submitted successfully!.
+2024-09-09 20:06:21,759 :INFO : test_form_submit : Refreshing the browser to clear data
+2024-09-09 20:06:22,343 :INFO : test_form_submit : text message received from application is ×
+Success! The Form has been submitted successfully!.
+2024-09-09 20:06:22,343 :INFO : test_form_submit : Refreshing the browser to clear data
+2024-09-09 20:06:26,694 :INFO : test_e2e : country sent to application is india
+2024-09-09 20:06:31,817 :INFO : test_e2e : text message received from application is ×
+Success! Thank you! Your order will be delivered in next few weeks :-).
+2024-09-09 20:07:51,416 :INFO : test_form_submit : text message received from application is ×
+Success! The Form has been submitted successfully!.
+2024-09-09 20:07:51,417 :INFO : test_form_submit : Refreshing the browser to clear data
+2024-09-09 20:07:51,957 :INFO : test_form_submit : text message received from application is ×
+Success! The Form has been submitted successfully!.
+2024-09-09 20:07:51,958 :INFO : test_form_submit : Refreshing the browser to clear data
+2024-09-09 20:07:56,596 :INFO : test_e2e : country sent to application is india
+2024-09-09 20:08:01,722 :INFO : test_e2e : text message received from application is ×
+Success! Thank you! Your order will be delivered in next few weeks :-).
+2024-09-09 20:08:56,815 :INFO : test_form_submit : text message received from application is ×
+Success! The Form has been submitted successfully!.
+2024-09-09 20:08:56,815 :INFO : test_form_submit : Refreshing the browser to clear data
+2024-09-09 20:08:57,389 :INFO : test_form_submit : text message received from application is ×
+Success! The Form has been submitted successfully!.
+2024-09-09 20:08:57,389 :INFO : test_form_submit : Refreshing the browser to clear data
+2024-09-09 20:09:01,474 :INFO : test_e2e : country sent to application is india
+2024-09-09 20:09:06,601 :INFO : test_e2e : text message received from application is ×
+Success! Thank you! Your order will be delivered in next few weeks :-).
+2024-09-09 20:09:44,489 :INFO : test_form_submit : text message received from application is ×
+Success! The Form has been submitted successfully!.
+2024-09-09 20:09:44,490 :INFO : test_form_submit : Refreshing the browser to clear data
+2024-09-09 20:09:45,034 :INFO : test_form_submit : text message received from application is ×
+Success! The Form has been submitted successfully!.
+2024-09-09 20:09:45,035 :INFO : test_form_submit : Refreshing the browser to clear data
+2024-09-09 20:09:49,485 :INFO : test_e2e : country sent to application is india
+2024-09-09 20:09:54,615 :INFO : test_e2e : text message received from application is ×
+Success! Thank you! Your order will be delivered in next few weeks :-).
+2024-09-10 09:08:09,502 :INFO : test_form_submit : text message received from application is ×
+Success! The Form has been submitted successfully!.
+2024-09-10 09:08:09,503 :INFO : test_form_submit : Refreshing the browser to clear data
+2024-09-10 09:08:10,021 :INFO : test_form_submit : text message received from application is ×
+Success! The Form has been submitted successfully!.
+2024-09-10 09:08:10,021 :INFO : test_form_submit : Refreshing the browser to clear data
+2024-09-10 09:08:14,548 :INFO : test_e2e : country sent to application is india
+2024-09-10 09:08:19,703 :INFO : test_e2e : text message received from application is ×
+Success! Thank you! Your order will be delivered in next few weeks :-).
+2024-09-10 09:22:04,041 :INFO : test_form_submit : text message received from application is ×
+Success! The Form has been submitted successfully!.
+2024-09-10 09:22:04,041 :INFO : test_form_submit : Refreshing the browser to clear data
+2024-09-10 09:22:04,565 :INFO : test_form_submit : text message received from application is ×
+Success! The Form has been submitted successfully!.
+2024-09-10 09:22:04,565 :INFO : test_form_submit : Refreshing the browser to clear data
+2024-09-10 09:22:09,000 :INFO : test_e2e : country sent to application is india
+2024-09-10 09:22:14,160 :INFO : test_e2e : text message received from application is ×
+Success! Thank you! Your order will be delivered in next few weeks :-).
+2024-09-10 09:23:56,288 :INFO : test_form_submit : text message received from application is ×
+Success! The Form has been submitted successfully!.
+2024-09-10 09:23:56,289 :INFO : test_form_submit : Refreshing the browser to clear data
+2024-09-10 09:23:56,859 :INFO : test_form_submit : text message received from application is ×
+Success! The Form has been submitted successfully!.
+2024-09-10 09:23:56,859 :INFO : test_form_submit : Refreshing the browser to clear data
+2024-09-10 09:24:01,130 :INFO : test_e2e : country sent to application is india
+2024-09-10 09:24:06,254 :INFO : test_e2e : text message received from application is ×
+Success! Thank you! Your order will be delivered in next few weeks :-).
+2024-09-10 09:25:10,753 :INFO : test_form_submit : text message received from application is ×
+Success! The Form has been submitted successfully!.
+2024-09-10 09:25:10,753 :INFO : test_form_submit : Refreshing the browser to clear data
+2024-09-10 09:25:11,328 :INFO : test_form_submit : text message received from application is ×
+Success! The Form has been submitted successfully!.
+2024-09-10 09:25:11,328 :INFO : test_form_submit : Refreshing the browser to clear data
+2024-09-10 09:25:15,607 :INFO : test_e2e : country sent to application is india
+2024-09-10 09:25:20,724 :INFO : test_e2e : text message received from application is ×
+Success! Thank you! Your order will be delivered in next few weeks :-).
+2024-09-10 10:18:16,769 :INFO : test_form_submit : text message received from application is ×
+Success! The Form has been submitted successfully!.
+2024-09-10 10:18:16,769 :INFO : test_form_submit : Refreshing the browser to clear data
+2024-09-10 10:18:17,325 :INFO : test_form_submit : text message received from application is ×
+Success! The Form has been submitted successfully!.
+2024-09-10 10:18:17,325 :INFO : test_form_submit : Refreshing the browser to clear data
+2024-09-10 10:18:21,659 :INFO : test_e2e : country sent to application is india
+2024-09-10 10:18:26,779 :INFO : test_e2e : text message received from application is ×
+Success! Thank you! Your order will be delivered in next few weeks :-).
+2024-09-10 10:20:51,990 :INFO : test_form_submit : text message received from application is ×
+Success! The Form has been submitted successfully!.
+2024-09-10 10:20:51,991 :INFO : test_form_submit : Refreshing the browser to clear data
+2024-09-10 10:20:52,528 :INFO : test_form_submit : text message received from application is ×
+Success! The Form has been submitted successfully!.
+2024-09-10 10:20:52,528 :INFO : test_form_submit : Refreshing the browser to clear data
+2024-09-10 10:20:56,629 :INFO : test_e2e : country sent to application is india
+2024-09-10 10:21:01,782 :INFO : test_e2e : text message received from application is ×
+Success! Thank you! Your order will be delivered in next few weeks :-).
+2024-09-10 10:27:48,476 :INFO : test_form_submit : text message received from application is ×
+Success! The Form has been submitted successfully!.
+2024-09-10 10:27:48,476 :INFO : test_form_submit : Refreshing the browser to clear data
+2024-09-10 10:27:49,057 :INFO : test_form_submit : text message received from application is ×
+Success! The Form has been submitted successfully!.
+2024-09-10 10:27:49,057 :INFO : test_form_submit : Refreshing the browser to clear data
+2024-09-10 10:27:53,193 :INFO : test_e2e : country sent to application is india
+2024-09-10 10:27:58,327 :INFO : test_e2e : text message received from application is ×
+Success! Thank you! Your order will be delivered in next few weeks :-).
+2024-09-10 10:35:47,172 :INFO : test_form_submit : text message received from application is ×
+Success! The Form has been submitted successfully!.
+2024-09-10 10:35:47,172 :INFO : test_form_submit : Refreshing the browser to clear data
+2024-09-10 10:35:47,745 :INFO : test_form_submit : text message received from application is ×
+Success! The Form has been submitted successfully!.
+2024-09-10 10:35:47,745 :INFO : test_form_submit : Refreshing the browser to clear data
+2024-09-10 10:35:51,862 :INFO : test_e2e : country sent to application is india
+2024-09-10 10:35:57,050 :INFO : test_e2e : text message received from application is ×
+Success! Thank you! Your order will be delivered in next few weeks :-).
+2024-09-10 10:40:24,217 :INFO : test_form_submit : text message received from application is ×
+Success! The Form has been submitted successfully!.
+2024-09-10 10:40:24,217 :INFO : test_form_submit : Refreshing the browser to clear data
+2024-09-10 10:40:24,831 :INFO : test_form_submit : text message received from application is ×
+Success! The Form has been submitted successfully!.
+2024-09-10 10:40:24,831 :INFO : test_form_submit : Refreshing the browser to clear data
+2024-09-10 10:40:29,087 :INFO : test_e2e : country sent to application is india
+2024-09-10 10:40:34,184 :INFO : test_e2e : text message received from application is ×
+Success! Thank you! Your order will be delivered in next few weeks :-).
+2024-09-10 10:42:53,023 :INFO : test_form_submit : text message received from application is ×
+Success! The Form has been submitted successfully!.
+2024-09-10 10:42:53,023 :INFO : test_form_submit : Refreshing the browser to clear data
+2024-09-10 10:42:53,574 :INFO : test_form_submit : text message received from application is ×
+Success! The Form has been submitted successfully!.
+2024-09-10 10:42:53,575 :INFO : test_form_submit : Refreshing the browser to clear data
+2024-09-10 10:42:57,980 :INFO : test_e2e : country sent to application is india
+2024-09-10 10:43:03,122 :INFO : test_e2e : text message received from application is ×
+Success! Thank you! Your order will be delivered in next few weeks :-).
+2024-09-10 10:46:13,279 :INFO : test_form_submit : text message received from application is ×
+Success! The Form has been submitted successfully!.
+2024-09-10 10:46:13,280 :INFO : test_form_submit : Refreshing the browser to clear data
+2024-09-10 10:46:13,807 :INFO : test_form_submit : text message received from application is ×
+Success! The Form has been submitted successfully!.
+2024-09-10 10:46:13,807 :INFO : test_form_submit : Refreshing the browser to clear data
+2024-09-10 10:46:18,062 :INFO : test_e2e : country sent to application is india
+2024-09-10 10:46:23,208 :INFO : test_e2e : text message received from application is ×
+Success! Thank you! Your order will be delivered in next few weeks :-).
+2024-09-10 10:49:17,556 :INFO : test_form_submit : text message received from application is ×
+Success! The Form has been submitted successfully!.
+2024-09-10 10:49:17,556 :INFO : test_form_submit : Refreshing the browser to clear data
+2024-09-10 10:49:18,110 :INFO : test_form_submit : text message received from application is ×
+Success! The Form has been submitted successfully!.
+2024-09-10 10:49:18,110 :INFO : test_form_submit : Refreshing the browser to clear data
+2024-09-10 10:49:22,293 :INFO : test_e2e : country sent to application is india
+2024-09-10 10:49:27,405 :INFO : test_e2e : text message received from application is ×
+Success! Thank you! Your order will be delivered in next few weeks :-).
+2024-09-10 10:51:14,667 :INFO : test_form_submit : text message received from application is ×
+Success! The Form has been submitted successfully!.
+2024-09-10 10:51:14,668 :INFO : test_form_submit : Refreshing the browser to clear data
+2024-09-10 10:51:15,241 :INFO : test_form_submit : text message received from application is ×
+Success! The Form has been submitted successfully!.
+2024-09-10 10:51:15,242 :INFO : test_form_submit : Refreshing the browser to clear data
+2024-09-10 10:51:19,692 :INFO : test_e2e : country sent to application is india
+2024-09-10 10:51:24,806 :INFO : test_e2e : text message received from application is ×
+Success! Thank you! Your order will be delivered in next few weeks :-).
+2024-09-10 10:58:06,201 :INFO : test_form_submit : text message received from application is ×
+Success! The Form has been submitted successfully!.
+2024-09-10 10:58:06,202 :INFO : test_form_submit : Refreshing the browser to clear data
+2024-09-10 10:58:06,853 :INFO : test_form_submit : text message received from application is ×
+Success! The Form has been submitted successfully!.
+2024-09-10 10:58:06,853 :INFO : test_form_submit : Refreshing the browser to clear data
+2024-09-10 10:58:11,238 :INFO : test_e2e : country sent to application is india
+2024-09-10 10:58:16,392 :INFO : test_e2e : text message received from application is ×
+Success! Thank you! Your order will be delivered in next few weeks :-).
+2024-09-10 11:01:18,067 :INFO : test_form_submit : text message received from application is ×
+Success! The Form has been submitted successfully!.
+2024-09-10 11:01:18,067 :INFO : test_form_submit : Refreshing the browser to clear data
+2024-09-10 11:01:18,601 :INFO : test_form_submit : text message received from application is ×
+Success! The Form has been submitted successfully!.
+2024-09-10 11:01:18,602 :INFO : test_form_submit : Refreshing the browser to clear data
+2024-09-10 11:01:22,857 :INFO : test_e2e : country sent to application is india
+2024-09-10 11:01:27,995 :INFO : test_e2e : text message received from application is ×
+Success! Thank you! Your order will be delivered in next few weeks :-).
+2024-09-10 11:01:38,298 :INFO : test_form_submit : text message received from application is ×
+Success! The Form has been submitted successfully!.
+2024-09-10 11:01:38,299 :INFO : test_form_submit : Refreshing the browser to clear data
+2024-09-10 11:01:38,838 :INFO : test_form_submit : text message received from application is ×
+Success! The Form has been submitted successfully!.
+2024-09-10 11:01:38,839 :INFO : test_form_submit : Refreshing the browser to clear data
+2024-09-10 11:01:43,209 :INFO : test_e2e : country sent to application is india
+2024-09-10 11:01:48,365 :INFO : test_e2e : text message received from application is ×
+Success! Thank you! Your order will be delivered in next few weeks :-).
+2024-09-10 13:16:51,414 :INFO : test_form_submit : text message received from application is ×
+Success! The Form has been submitted successfully!.
+2024-09-10 13:16:51,416 :INFO : test_form_submit : Refreshing the browser to clear data
+2024-09-10 13:16:51,960 :INFO : test_form_submit : text message received from application is ×
+Success! The Form has been submitted successfully!.
+2024-09-10 13:16:51,960 :INFO : test_form_submit : Refreshing the browser to clear data
+2024-09-10 13:16:56,227 :INFO : test_e2e : country sent to application is india
+2024-09-10 13:17:01,377 :INFO : test_e2e : text message received from application is ×
+Success! Thank you! Your order will be delivered in next few weeks :-).
+2024-09-10 13:18:08,577 :INFO : test_form_submit : text message received from application is ×
+Success! The Form has been submitted successfully!.
+2024-09-10 13:18:08,577 :INFO : test_form_submit : Refreshing the browser to clear data
+2024-09-10 13:18:09,128 :INFO : test_form_submit : text message received from application is ×
+Success! The Form has been submitted successfully!.
+2024-09-10 13:18:09,128 :INFO : test_form_submit : Refreshing the browser to clear data
+2024-09-10 13:18:14,318 :INFO : test_e2e : country sent to application is india
+2024-09-10 13:18:19,477 :INFO : test_e2e : text message received from application is ×
+Success! Thank you! Your order will be delivered in next few weeks :-).
+2024-09-10 16:01:14,264 :INFO : test_form_submit : text message received from application is ×
+Success! The Form has been submitted successfully!.
+2024-09-10 16:01:14,265 :INFO : test_form_submit : Refreshing the browser to clear data
+2024-09-10 16:01:14,815 :INFO : test_form_submit : text message received from application is ×
+Success! The Form has been submitted successfully!.
+2024-09-10 16:01:14,816 :INFO : test_form_submit : Refreshing the browser to clear data
+2024-09-10 16:01:19,194 :INFO : test_e2e : country sent to application is india
+2024-09-10 16:01:24,354 :INFO : test_e2e : text message received from application is ×
+Success! Thank you! Your order will be delivered in next few weeks :-).
+2024-09-10 16:40:48,821 :INFO : test_form_submit : text message received from application is ×
+Success! The Form has been submitted successfully!.
+2024-09-10 16:40:48,822 :INFO : test_form_submit : Refreshing the browser to clear data
+2024-09-10 16:40:49,303 :INFO : test_form_submit : text message received from application is ×
+Success! The Form has been submitted successfully!.
+2024-09-10 16:40:49,303 :INFO : test_form_submit : Refreshing the browser to clear data
+2024-09-10 16:40:53,444 :INFO : test_e2e : country sent to application is india
+2024-09-10 16:40:58,570 :INFO : test_e2e : text message received from application is ×
+Success! Thank you! Your order will be delivered in next few weeks :-).
+2024-09-10 16:49:26,604 :INFO : test_form_submit : text message received from application is ×
+Success! The Form has been submitted successfully!.
+2024-09-10 16:49:26,605 :INFO : test_form_submit : Refreshing the browser to clear data
+2024-09-10 16:49:27,131 :INFO : test_form_submit : text message received from application is ×
+Success! The Form has been submitted successfully!.
+2024-09-10 16:49:27,131 :INFO : test_form_submit : Refreshing the browser to clear data
+2024-09-10 16:49:31,632 :INFO : test_e2e : country sent to application is india
+2024-09-10 16:49:36,813 :INFO : test_e2e : text message received from application is ×
+Success! Thank you! Your order will be delivered in next few weeks :-).
+2024-09-11 17:42:54,332 :INFO : test_form_submit : text message received from application is ×
+Success! The Form has been submitted successfully!.
+2024-09-11 17:42:54,332 :INFO : test_form_submit : Refreshing the browser to clear data
+2024-09-11 17:47:09,890 :INFO : test_form_submit : text message received from application is ×
+Success! The Form has been submitted successfully!.
+2024-09-11 17:47:09,891 :INFO : test_form_submit : Refreshing the browser to clear data
+2024-09-11 17:49:33,176 :INFO : test_form_submit : text message received from application is ×
+Success! The Form has been submitted successfully!.
+2024-09-11 17:49:33,177 :INFO : test_form_submit : Refreshing the browser to clear data
+2024-09-11 17:50:55,355 :INFO : test_form_submit : text message received from application is ×
+Success! The Form has been submitted successfully!.
+2024-09-11 17:50:55,355 :INFO : test_form_submit : Refreshing the browser to clear data

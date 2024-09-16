@@ -1,0 +1,7 @@
+selenium~=4.24.0
+pytest~=8.3.2
+pytest-html
+colorama
+requests
+
+openpyxl~=3.1.5
