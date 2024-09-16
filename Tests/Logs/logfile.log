@@ -1,0 +1,6 @@
+2024-09-16 20:42:30,455 :INFO : test_form_submit : text message received from application is ×
+Success! The Form has been submitted successfully!.
+2024-09-16 20:42:30,455 :INFO : test_form_submit : Refreshing the browser to clear data
+2024-09-16 20:42:34,605 :INFO : test_e2e : country sent to application is india
+2024-09-16 20:42:39,778 :INFO : test_e2e : text message received from application is ×
+Success! Thank you! Your order will be delivered in next few weeks :-).
