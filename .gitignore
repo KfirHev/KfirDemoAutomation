@@ -1,4 +1,5 @@
 Reports/
+Screenshots/
 *.log
 *.html
 __pycache__/
