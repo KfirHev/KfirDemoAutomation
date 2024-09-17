@@ -17,7 +17,8 @@ class HomePageData:
     @staticmethod
     def get_data_excel(test_case):
 
-        path_to_excell = r'C:\Users\hkfir\PycharmProjects\pythonKfirFramework\TestData\ExcelDataToPytest.xlsx'
+       #path_to_excell = r'C:\Users\hkfir\PycharmProjects\pythonKfirFramework\TestData\ExcelDataToPytest.xlsx'
+        path_to_excell = 'TestData/ExcelDataToPytest.xlsx'
         book = openpyxl.load_workbook(path_to_excell)
         sheet = book.active
 
