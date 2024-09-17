@@ -36,7 +36,7 @@ def setup_browser(request):
         chrome_options.add_argument('--start-maximized')
         chrome_options.add_argument('--ignore-certificate-errors')
         # Specify the path to the ChromeDriver executable
-        service = ChromeService("C:\\browserdriver\\chromedriver.exe")
+        service = ChromeService("browserdriver\\chromedriver.exe")
         # Initialize the WebDriver with the Service object and use headless
         driver = webdriver.Chrome(service=service, options=chrome_options)
     elif browser_name.lower() == 'firefox':
@@ -46,7 +46,7 @@ def setup_browser(request):
         # firefox_options.headless = True
         # Example of setting a preference
         # firefox_options.set_preference('dom.disable_open_during_load', True)
-        service = FirefoxService("C:\\browserdriver\\geckodriver.exe")
+        service = FirefoxService("browserdriver\\geckodriver.exe")
         driver = webdriver.Firefox(service=service, options=firefox_options)
     elif browser_name.lower() == 'edge':
         print('Edge')
@@ -54,7 +54,7 @@ def setup_browser(request):
         # edge_options.add_argument('--headless')
         edge_options.add_argument('--start-maximized')
         edge_options.add_argument('--ignore-certificate-errors')
-        service = EdgeService("C:\\browserdriver\\msedgedriver.exe")
+        service = EdgeService("browserdriver\\msedgedriver.exe")
         driver = webdriver.Edge(service=service, options=edge_options)
     else:
         raise ValueError("You should choose browser between chrome ,firefox or Edge")
