@@ -36,7 +36,11 @@ def setup_browser(request):
         chrome_options.add_argument('--start-maximized')
         chrome_options.add_argument('--ignore-certificate-errors')
         # Specify the path to the ChromeDriver executable
-        service = ChromeService("browserdriver\\chromedriver.exe")
+
+        # TODO FOR WINDOWS:
+        # service = ChromeService(r"browserdriver\\chromedriver.exe")
+        # TODO FOR LINUX
+        service = ChromeService("browserdriver/chromedriver")
         # Initialize the WebDriver with the Service object and use headless
         driver = webdriver.Chrome(service=service, options=chrome_options)
     elif browser_name.lower() == 'firefox':
@@ -46,7 +50,7 @@ def setup_browser(request):
         # firefox_options.headless = True
         # Example of setting a preference
         # firefox_options.set_preference('dom.disable_open_during_load', True)
-        service = FirefoxService("browserdriver\\geckodriver.exe")
+        service = FirefoxService(r"browserdriver\\geckodriver.exe")
         driver = webdriver.Firefox(service=service, options=firefox_options)
     elif browser_name.lower() == 'edge':
         print('Edge')
