@@ -11,4 +11,4 @@ COPY . /app
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Run pytest when the container launches
-CMD ["pytest"]
+CMD ["pytest --html=Reports\report.html"]
