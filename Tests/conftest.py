@@ -32,7 +32,7 @@ def setup_browser(request):
         global driver
         print('Chrome')
         chrome_options = ChromeOptions()
-        # chrome_options.add_argument('headless')
+        chrome_options.add_argument('headless')
         chrome_options.add_argument('--start-maximized')
         chrome_options.add_argument('--ignore-certificate-errors')
         # Specify the path to the ChromeDriver executable
