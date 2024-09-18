@@ -20,61 +20,100 @@ logger = logging.getLogger(__name__)
 # This method is for creation of --browser_type option when running for cmd (can be set under pycharm config also)
 def pytest_addoption(parser):
     parser.addoption(
-        "--browser_type", action="store", default="chrome", help="my option: chrome or firefox or edge"
+        "--browser_type", action="store", default="chrome", help="my option: chrome,firefox or edge"
+    )
+    parser.addoption(
+        "--run_env", action="store", default="local", help="my option: local or docker"
     )
 
 
 @pytest.fixture(scope='class')
 def setup_browser(request):
+    global driver
     browser_name = request.config.getoption('browser_type')
+    run_env = request.config.getoption('run_env')
 
-    if browser_name.lower() == 'chrome':
-        global driver
-        print('Chrome')
+    # Common browser setup
+    def setup_chrome():
         chrome_options = ChromeOptions()
         chrome_options.add_argument('headless')
         chrome_options.add_argument('--start-maximized')
         chrome_options.add_argument('--ignore-certificate-errors')
-        # Specify the path to the ChromeDriver executable
+        return chrome_options
 
-        # TODO FOR WINDOWS:
-        # service = ChromeService(r"browserdriver\\chromedriver.exe")
-        # TODO FOR LINUX
-        service = ChromeService("browserdriver/chromedriver")
-        # Initialize the WebDriver with the Service object and use headless
-        driver = webdriver.Chrome(service=service, options=chrome_options)
-    elif browser_name.lower() == 'firefox':
-        print('FireFox')
+    def setup_firefox():
         firefox_options = FirefoxOptions()
-        # Uncomment the line below if you want to run Firefox in headless mod
-        # firefox_options.headless = True
-        # Example of setting a preference
-        # firefox_options.set_preference('dom.disable_open_during_load', True)
-        service = FirefoxService(r"browserdriver\\geckodriver.exe")
-        driver = webdriver.Firefox(service=service, options=firefox_options)
-    elif browser_name.lower() == 'edge':
-        print('Edge')
+        # Uncomment the line below if you want to run Firefox in headless mode
+        firefox_options.headless = True
+        return firefox_options
+
+    def setup_edge():
         edge_options = EdgeOptions()
-        # edge_options.add_argument('--headless')
         edge_options.add_argument('--start-maximized')
         edge_options.add_argument('--ignore-certificate-errors')
-        service = EdgeService("browserdriver\\msedgedriver.exe")
-        driver = webdriver.Edge(service=service, options=edge_options)
+        return edge_options
+
+    # Local environment setup
+    if run_env == 'local':
+        if browser_name.lower() == 'chrome':
+            print('Chrome - Local')
+            chrome_options = setup_chrome()
+            # TODO: Modify for Windows or Linux based on your platform
+            service = ChromeService(r"browserdriver\\chromedriver.exe")  # Windows path example
+            driver = webdriver.Chrome(service=service, options=chrome_options)
+
+        elif browser_name.lower() == 'firefox':
+            print('FireFox - Local')
+            firefox_options = setup_firefox()
+            # TODO: Modify for Windows or Linux based on your platform
+            service = FirefoxService(r"browserdriver\\geckodriver.exe")  # Windows path example
+            driver = webdriver.Firefox(service=service, options=firefox_options)
+
+        elif browser_name.lower() == 'edge':
+            print('Edge - Local')
+            edge_options = setup_edge()
+            # TODO: Modify for Windows or Linux based on your platform
+            service = EdgeService(r"browserdriver\\msedgedriver.exe")  # Windows path example
+            driver = webdriver.Edge(service=service, options=edge_options)
+
+        else:
+            raise ValueError("You should choose a browser between chrome, firefox, or edge")
+
+    # Docker/Grid environment setup
+    elif run_env == 'docker':
+        if browser_name.lower() == 'chrome':
+            print('Chrome - Docker')
+            chrome_options = setup_chrome()
+            driver = webdriver.Remote(
+                command_executor="http://selenium-hub:4444/wd/hub",
+                options=chrome_options
+            )
+
+        elif browser_name.lower() == 'firefox':
+            print('FireFox - Docker')
+            firefox_options = setup_firefox()
+            driver = webdriver.Remote(
+                command_executor="http://selenium-hub:4444/wd/hub",
+                options=firefox_options
+            )
+
+        else:
+            raise ValueError("Only Chrome and Firefox are supported in Docker")
+
     else:
-        raise ValueError("You should choose browser between chrome ,firefox or Edge")
+        raise ValueError("You should choose the environment between local and docker")
 
     # Implicit wait for MAX TIMEOUT X sec
     driver.implicitly_wait(4)
-    # Open the desired website
-    # TODO setup landing page as a parameter - IN JENKINS ?
+
+    # Open the desired website (can be parameterized later)
     driver.get("https://rahulshettyacademy.com/angularpractice/")
-    # driver.get("https://rahulshettyacademy.com/upload-download-test/")   # for testing with excell
+
     # Attach the driver to the class
     request.cls.driver = driver
 
     yield
-    #time.sleep(5)
-    driver.close()
+    driver.quit()
 
 
 def pytest_configure(config):
