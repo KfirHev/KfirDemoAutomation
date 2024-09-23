@@ -1,6 +1,7 @@
 .venv/
 Reports/
 Screenshots/
+TEMP_KFIR/
 *.log
 *.html
 __pycache__/

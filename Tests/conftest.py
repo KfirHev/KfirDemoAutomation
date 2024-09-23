@@ -1,15 +1,16 @@
 import os
+import time
 from datetime import datetime
 import pytest
 import logging
 from selenium import webdriver
+from selenium.common import WebDriverException
 from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.firefox.service import Service as FirefoxService
 from selenium.webdriver.edge.service import Service as EdgeService
 from selenium.webdriver.chrome.options import Options as ChromeOptions
 from selenium.webdriver.firefox.options import Options as FirefoxOptions
 from selenium.webdriver.edge.options import Options as EdgeOptions
-
 
 driver = None
 
@@ -29,17 +30,24 @@ def pytest_addoption(parser):
 
 @pytest.fixture(scope='class')
 def setup_browser(request):
-    global driver
+    # global driver
     browser_name = request.config.getoption('browser_type')
     run_env = request.config.getoption('run_env')
 
     # Common browser setup
     def setup_chrome():
         chrome_options = ChromeOptions()
-        chrome_options.add_argument('headless')
+        chrome_options.add_argument('--headless')
+        chrome_options.add_argument('--no-sandbox')
+        chrome_options.add_argument('--disable-dev-shm-usage')
+        chrome_options.add_argument('--disable-gpu')
         chrome_options.add_argument('--start-maximized')
+        chrome_options.add_argument('--disable-software-rasterizer')
         chrome_options.add_argument('--ignore-certificate-errors')
-        return chrome_options
+        # Updated Chrome path to run in the container
+        # chrome_path = r"C:\Program Files\Chrome\chrome-win64\chrome.exe"
+        # chrome_options.binary_location = chrome_path
+        # return chrome_options
 
     def setup_firefox():
         firefox_options = FirefoxOptions()
@@ -57,10 +65,24 @@ def setup_browser(request):
     if run_env == 'local':
         if browser_name.lower() == 'chrome':
             print('Chrome - Local')
-            chrome_options = setup_chrome()
+            chrome_options = ChromeOptions()
+            #chrome_options.add_argument('--no-sandbox')
+            #chrome_options.add_argument('--headless=new')
+            #chrome_options.add_argument('--disable-dev-shm-usage')
+            chrome_options.add_argument('--start-maximized')
+            #chrome_options.add_argument('--ignore-certificate-errors')
+            #chrome_options = setup_chrome()
+            #chrome_path = r"C:\Program Files\Chrome\chrome-win64\chrome.exe"
+            #chrome_options.binary_location = chrome_path
+            # set the user-agent back to chrome.
+            user_agent = 'Chrome/129.0.6668.59'
+            chrome_options.add_argument(f'user-agent={user_agent}')
             # TODO: Modify for Windows or Linux based on your platform
-            service = ChromeService(r"browserdriver\\chromedriver.exe")  # Windows path example
+            #service = ChromeService(r"C:\Program Files\Chrome\ChromeDriver\chromedriver-win64\chromedriver.exe")
+            # TODO FOR LOCAL WINDOWS:
+            service = ChromeService(r"browserdriver\\chromedriver128.exe")
             driver = webdriver.Chrome(service=service, options=chrome_options)
+
 
         elif browser_name.lower() == 'firefox':
             print('FireFox - Local')
@@ -107,12 +129,13 @@ def setup_browser(request):
     driver.implicitly_wait(4)
 
     # Open the desired website (can be parameterized later)
-    driver.get("https://rahulshettyacademy.com/angularpractice/")
+    driver.get("https://www.saucedemo.com/")
 
     # Attach the driver to the class
     request.cls.driver = driver
 
     yield
+    time.sleep(4)  # for demo purposes
     driver.quit()
 
 
