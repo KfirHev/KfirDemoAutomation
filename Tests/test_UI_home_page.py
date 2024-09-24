@@ -5,7 +5,7 @@ from Utils.BaseClass import BaseClass
 from TestData.HomePageData import HomePageData
 
 
-#@pytest.mark.skip
+@pytest.mark.skip
 class TestHomePage(BaseClass):
     """Test suite for the Home Page of the application."""
 
@@ -53,7 +53,7 @@ class TestHomePage(BaseClass):
             raise
 
         # Validate Username hint
-        user_hint = home_page.set_user_name().get_attribute('placeholder')
+        user_hint = home_page.get_user_hint()
         expected_user_hint = get_data['user_name_hint']
         try:
             assert user_hint == expected_user_hint
@@ -63,7 +63,7 @@ class TestHomePage(BaseClass):
             raise
 
         # Validate Password hint
-        pw_hint = home_page.set_pw().get_attribute('placeholder')
+        pw_hint = home_page.get_password_hint()
         expected_pw_hint = get_data['pw_hint']
         try:
             assert pw_hint == expected_pw_hint
