@@ -7,9 +7,12 @@ class HomePageData:
          'pw_hint': 'Password',
          'users': {'standard_user', 'problem_user', 'performance_glitch_user', 'error_user',
                    'visual_user'},
-         'invalid_users': {'user_not_found','unicorn_rider99','Hobbit_Hacker','Darth_Vaders_Nephew'},
+         'invalid_users': ('Darth_Vaders_Nephew', ' standard_users', ' standard_user', 'standard_user '),
          'locked_user': 'locked_out_user',
-         'password': 'secret_sauce'}]
+         'password': 'secret_sauce',
+         'invalid password': ('bs password', '*secret_sauce', ' secret_sauce', 'secret_sauce '),
+         'empty': ''
+         }]
 
     # @staticmethod
     # def get_data(self, request):
