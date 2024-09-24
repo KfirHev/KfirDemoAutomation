@@ -2,6 +2,7 @@ from Utils.BaseClass import BaseClass
 from selenium.webdriver.common.by import By
 from selenium.webdriver.remote.webelement import WebElement
 from selenium.common.exceptions import NoSuchElementException
+from PageObjects.ProductsPage import ProductsPage
 
 
 class HomePage(BaseClass):
@@ -93,11 +94,23 @@ class HomePage(BaseClass):
         except NoSuchElementException:
             return ""  # Return an empty string if the password div is not found
 
-    def set_user_name(self) -> WebElement:
-        return self._driver.find_element(*HomePage.l_user_name)
+    def get_user_hint(self):
+        return self._driver.find_element(*self.l_user_name).get_attribute('placeholder')
 
-    def set_pw(self) -> WebElement:
-        return self._driver.find_element(*HomePage.l_pw)
+    def get_password_hint(self):
+        return self._driver.find_element(*self.l_pw).get_attribute('placeholder')
 
-    def login_btn(self) -> WebElement:
-        return self._driver.find_element(*HomePage.l_login_btn)
+    def login(self, user, pw):
+
+        """
+        Locate and return the login button on the home page.
+
+        :return: WebElement representing the login button.
+        """
+        self._driver.find_element(*HomePage.l_user_name).send_keys(user)
+        self._driver.find_element(*HomePage.l_pw).send_keys(pw)
+        self._driver.find_element(*HomePage.l_login_btn).click()
+        return ProductsPage(self._driver)
+
+
+

@@ -5,8 +5,10 @@ class HomePageData:
     test_home_page_login = [
         {'user_name_hint': 'Username',
          'pw_hint': 'Password',
-         'users': {'standard_user', 'locked_out_user', 'problem_user', 'performance_glitch_user', 'error_user',
+         'users': {'standard_user', 'problem_user', 'performance_glitch_user', 'error_user',
                    'visual_user'},
+         'invalid_users': {'user_not_found','unicorn_rider99','Hobbit_Hacker','Darth_Vaders_Nephew'},
+         'locked_user': 'locked_out_user',
          'password': 'secret_sauce'}]
 
     # @staticmethod
