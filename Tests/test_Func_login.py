@@ -62,7 +62,5 @@ class TestLogin(BaseClass):
                     log.error(f"Error during login/logout process for user {user}: {str(e)}")
                     raise
 
-        # TODO add Negative tests get locator for err message and add it to the Homepage locators
-
 
 
