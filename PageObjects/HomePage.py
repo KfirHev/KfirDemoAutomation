@@ -1,9 +1,10 @@
 from Utils.BaseClass import BaseClass
 from selenium.webdriver.common.by import By
-from selenium.webdriver.remote.webelement import WebElement
 from selenium.common.exceptions import NoSuchElementException
 from PageObjects.ProductsPage import ProductsPage
 
+
+# Todo catch exceptions in BaseClass ?
 
 class HomePage(BaseClass):
     """Page object model for the Home Page."""
@@ -111,6 +112,3 @@ class HomePage(BaseClass):
         self._driver.find_element(*HomePage.l_pw).send_keys(pw)
         self._driver.find_element(*HomePage.l_login_btn).click()
         return ProductsPage(self._driver)
-
-
-
