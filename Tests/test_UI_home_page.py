@@ -5,7 +5,7 @@ from Utils.BaseClass import BaseClass
 from TestData.HomePageData import HomePageData
 
 
-@pytest.mark.skip
+#@pytest.mark.skip
 class TestHomePage(BaseClass):
     """Test suite for the Home Page of the application."""
 
@@ -74,7 +74,10 @@ class TestHomePage(BaseClass):
 
         # Verify accepted usernames on site
         users = home_page.get_valid_user_name()
+        # Add valid users from homepage data an add the locked out user
         users_list = get_data['users']
+        users_list.append(get_data['locked_user'])
+
         try:
             assert set(users) == set(users_list)
             log.info("Usernames match the expected list.")
