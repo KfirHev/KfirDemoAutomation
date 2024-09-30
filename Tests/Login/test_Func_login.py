@@ -4,6 +4,7 @@ from TestData.HomePageData import HomePageData
 from Utils.BaseClass import BaseClass
 
 
+# @pytest.mark.skip
 class TestLogin(BaseClass):
     """
     This class tests the login functionality of the HomePage using valid credentials
@@ -38,29 +39,27 @@ class TestLogin(BaseClass):
         users = get_data['users']
         # Loop through all valid usernames except locked out user
         for user in users:
-            if user != 'locked_out_user':
-                try:
-                    # Perform login
-                    product_page = home_page.login(user, get_data['password'])
-                    expected_products_title = 'Products'
 
-                    # Assert the page title after login
-                    assert expected_products_title == product_page.get_page_title()
-                    log.info(f"Login with user {user} was successful.")
+            try:
+                # Perform login
+                product_page = home_page.login(user, get_data['password'])
+                expected_products_title = 'Products'
 
-                    # Perform logout and assert the page title after logout
-                    expected_home_page_title = 'Swag Labs'
-                    home_page = product_page.log_out()
-                    assert expected_home_page_title == home_page.get_title()
-                    log.info(f"Logout from user {user} was successful.")
+                # Assert the page title after login
+                assert expected_products_title == product_page.get_page_title()
+                log.info(f"Login with user {user} was successful.")
 
-                except AssertionError as ae:
-                    log.error(f"Assertion failed for user {user}: {str(ae)}")
-                    raise
+                # Perform logout and assert the page title after logout
+                expected_home_page_title = 'Swag Labs'
+                home_page = product_page.log_out()
+                assert expected_home_page_title == home_page.get_title()
+                log.info(f"Logout from user {user} was successful.")
 
-                except Exception as e:
-                    log.error(f"Error during login/logout process for user {user}: {str(e)}")
-                    raise
+            except AssertionError as ae:
+                log.error(f"Assertion failed for user {user}: {str(ae)}")
+                raise
 
-
+            except Exception as e:
+                log.error(f"Error during login/logout process for user {user}: {str(e)}")
+                raise
 

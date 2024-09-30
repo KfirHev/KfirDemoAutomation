@@ -3,15 +3,19 @@ import os
 import logging
 from logging.handlers import RotatingFileHandler
 import pytest
-from selenium.common import NoSuchElementException, TimeoutException
+from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.select import Select
 from selenium.webdriver.support.wait import WebDriverWait
+from selenium.common import NoSuchElementException, TimeoutException
 
 
 @pytest.mark.usefixtures('setup_browser')
 class BaseClass:
     """Base class for test automation framework providing common utility methods."""
+
+    l_shop_cart = (By.CLASS_NAME, "shopping_cart_link")
+    l_cart_icon_number_of_products = (By.CSS_SELECTOR, ".shopping_cart_badge")
 
     @staticmethod
     def get_logger() -> logging.Logger:
@@ -44,6 +48,31 @@ class BaseClass:
         logger.setLevel(logging.DEBUG)
         return logger
 
+    def get_products_name(self, locator):  # TODO if it used by only one page move to POM
+        products = self._driver.find_elements(*locator)
+        return [p.text for p in products]
+
+    def get_number_of_products_from_cart_icon(self):
+        """
+        Returns the number of products displayed in the cart icon.
+
+        :return: The product count as an int.
+        """
+
+        products_count = self._driver.find_element(*self.l_cart_icon_number_of_products).text
+        return int(products_count)
+
+    def click_shopping_cart(self):
+        """
+        Navigates to the shopping cart by clicking the cart icon.
+
+        :return: CartPage object representing the cart page.
+        """
+        from PageObjects.CartPage import CartPage  # lazy import
+        self._driver.find_element(*self.l_shop_cart).click()
+        return CartPage(self._driver)
+
+    # General helpers methods
     def verify_link_clickable(self, locator) -> bool:
         """Verify if a link is clickable.
 
