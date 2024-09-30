@@ -14,9 +14,11 @@ from selenium.common import NoSuchElementException, TimeoutException
 class BaseClass:
     """Base class for test automation framework providing common utility methods."""
 
+    # Locators
     l_shop_cart = (By.CLASS_NAME, "shopping_cart_link")
     l_cart_icon_number_of_products = (By.CSS_SELECTOR, ".shopping_cart_badge")
 
+    # 1. Logging utility
     @staticmethod
     def get_logger() -> logging.Logger:
         """Set up and return a logger instance.
@@ -48,31 +50,34 @@ class BaseClass:
         logger.setLevel(logging.DEBUG)
         return logger
 
-    def get_products_name(self, locator):  # TODO if it used by only one page move to POM
-        products = self._driver.find_elements(*locator)
-        return [p.text for p in products]
-
-    def get_number_of_products_from_cart_icon(self):
-        """
-        Returns the number of products displayed in the cart icon.
+    # 2. Product-specific methods
+    def get_number_of_products_from_cart_icon(self) -> int:
+        """Returns the number of products displayed in the cart icon.
 
         :return: The product count as an int.
         """
-
         products_count = self._driver.find_element(*self.l_cart_icon_number_of_products).text
         return int(products_count)
 
     def click_shopping_cart(self):
-        """
-        Navigates to the shopping cart by clicking the cart icon.
+        """Navigates to the shopping cart by clicking the cart icon.
 
         :return: CartPage object representing the cart page.
         """
-        from PageObjects.CartPage import CartPage  # lazy import
+        from PageObjects.CartPage import CartPage  # Lazy import
         self._driver.find_element(*self.l_shop_cart).click()
         return CartPage(self._driver)
 
-    # General helpers methods
+    def get_products_name(self, locator) -> list:
+        """Fetches the names of all products on the page.
+
+        :param locator: Locator for the products.
+        :return: A list of product names.
+        """
+        products = self._driver.find_elements(*locator)
+        return [p.text for p in products]
+
+    # 3. General helper methods
     def verify_link_clickable(self, locator) -> bool:
         """Verify if a link is clickable.
 
@@ -93,9 +98,9 @@ class BaseClass:
         """
         try:
             WebDriverWait(self._driver, 10).until(EC.visibility_of_element_located(locator))
-            return True  # Element is present
+            return True
         except TimeoutException:
-            return False  # Element is not found within the timeout period
+            return False
 
     def select_from_dropdown(self, locator, value) -> None:
         """Select a value from a dropdown menu.
