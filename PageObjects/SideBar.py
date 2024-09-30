@@ -25,7 +25,7 @@ class SideBar(BaseClass):
 
     def log_out(self):
         """
-        Logs out of the application by clicking the log out link in the sidebar.
+        Logs out of the application by clicking the log-out link in the sidebar.
 
         This method locates the 'log out' button within the sidebar and clicks it.
         """
