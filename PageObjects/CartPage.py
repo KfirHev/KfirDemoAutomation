@@ -7,8 +7,9 @@ class CartPage(BaseClass):
     """Page object model for the Cart Page."""
 
     # Locators for elements on the Cart Page
-    l_side_menu_button = (By.ID, "react-burger-menu-btn")
+    l_side_menu_button = (By.ID, "react-burger-menu-btn")  # TODO move it to baseclass
     l_all_page_products_names = (By.CSS_SELECTOR, ".inventory_item_name")
+    l_continue_shopping_button = (By.ID, "continue-shopping")
 
     def __init__(self, driver):
         """
@@ -27,7 +28,13 @@ class CartPage(BaseClass):
 
         :return: A list of product names on the cart page.
         """
+        # Using BaseClass method
         return self.get_products_name(CartPage.l_all_page_products_names)
+
+    def continue_shopping(self):
+        self._driver.find_element(*CartPage.l_continue_shopping_button).click()
+        from PageObjects.ProductsPage import ProductsPage
+        return ProductsPage(self._driver)
 
     def log_out(self):
         """
@@ -51,7 +58,7 @@ class CartPage(BaseClass):
         from PageObjects.HomePage import HomePage
         return HomePage(self._driver)
 
-    def reset_application_state(self):
+    def reset_application_state(self): # Todo move to BaseClass
         """
         Resets the application state by opening the sidebar and clearing the session.
 
