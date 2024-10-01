@@ -65,19 +65,24 @@ class TestLogin(BaseClass):
         locked_user = get_data['locked_user']
 
         # Test login without username
-        self.login_and_verify_error(home_page, '', '', expected_error_messages['empty_username'], log)
+        self.login_and_verify_error(home_page, '', '',
+                                    expected_error_messages['empty_username'], log)
 
         # Test login without password
-        self.login_and_verify_error(home_page, valid_user[0], '', expected_error_messages['empty_password'], log)
+        self.login_and_verify_error(home_page, valid_user[0], '',
+                                    expected_error_messages['empty_password'], log)
 
         # Loop through all invalid usernames and check error is as expected
         for user in invalid_users:
-            self.login_and_verify_error(home_page, user, password, expected_error_messages['invalid_credentials'], log)
+            self.login_and_verify_error(home_page, user, password,
+                                        expected_error_messages['invalid_credentials'], log)
 
         # Loop through invalid passwords and check error is as expected
         for pw in invalid_passwords:
-            self.login_and_verify_error(home_page, valid_user[0], pw, expected_error_messages['invalid_credentials'],
+            self.login_and_verify_error(home_page, valid_user[0], pw,
+                                        expected_error_messages['invalid_credentials'],
                                         log)
 
         # Test login with locked user
-        self.login_and_verify_error(home_page, locked_user, password, expected_error_messages['locked_user'], log)
+        self.login_and_verify_error(home_page, locked_user, password,
+                                    expected_error_messages['locked_user'], log)
