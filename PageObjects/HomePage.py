@@ -110,7 +110,7 @@ class HomePage(BaseClass):
         """
         return self._driver.find_element(*self.l_pw).get_attribute('placeholder')
 
-    def login(self, user: str, pw: str) -> ProductsPage:
+    def login(self, user='standard_user', pw='secret_sauce') -> ProductsPage:
         """
         Performs a login using the provided username and password.
 
