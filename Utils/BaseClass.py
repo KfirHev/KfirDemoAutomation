@@ -68,16 +68,22 @@ class BaseClass:
         self._driver.find_element(*self.l_shop_cart).click()
         return CartPage(self._driver)
 
-    def get_products_name(self, locator) -> list:
-        """Fetches the names of all products on the page.
+    def get_products_name(self, locator):
+        """Fetches the name(s) of products on the page.
 
         :param locator: Locator for the products.
-        :return: A list of product names.
+        :return: The name of a single product if there's only one, or a list of product names if there are multiple.
         """
         products = self._driver.find_elements(*locator)
-        return [p.text for p in products]
+        products_name = [p.text for p in products]
+
+        if len(products_name) == 1:  # Return a single product name if there's only one product
+            return products_name[0]
+
+        return products_name
 
     # 3. General helper methods
+
     def verify_link_clickable(self, locator) -> bool:
         """Verify if a link is clickable.
 
