@@ -21,3 +21,26 @@ class ProductPageData:
         }
     ]
 
+    test_sorting_options = [
+        {
+            'option_name': 'Name (Z to A)',
+
+        },
+
+        {
+            'option_name': 'Name (A to Z)',
+
+        },
+
+        {
+            'option_name': 'Price (low to high)',
+
+        },
+
+        {
+            'option_name': 'Price (high to low)',
+
+        },
+
+    ]
+
