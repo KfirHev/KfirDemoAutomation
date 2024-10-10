@@ -8,9 +8,9 @@ class SingleProductPage(BaseClass):
     """Page object model for the Products Page, handling product interactions and cart management."""
 
     # Locators for elements on the Products Page
-    l_side_menu_button = (By.ID, "react-burger-menu-btn")  # TODO move it to baseclass
     l_product_name = (By.CSS_SELECTOR, ".inventory_details_name")
     l_add_to_cart_button = (By.XPATH, "//button[text() = 'Add to cart']")
+    l_remove_from_cart_button = (By.XPATH, "//button[text() = 'Remove']") # Todo move to base class
     l_back_to_products = (By.ID, "back-to-products")
     l_product_price = (By.CSS_SELECTOR, ".inventory_details_price")
 
@@ -34,6 +34,9 @@ class SingleProductPage(BaseClass):
 
     def add_product_to_cart(self):
         self._driver.find_element(*SingleProductPage.l_add_to_cart_button).click()
+
+    def remove_product_from_cart(self):
+        self._driver.find_element(*SingleProductPage.l_remove_from_cart_button).click()
 
     def back_to_product_page_click(self):
         self._driver.find_element(*SingleProductPage.l_back_to_products).click()
