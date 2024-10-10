@@ -2,14 +2,13 @@ import time
 
 import pytest
 from PageObjects.HomePage import HomePage
-from PageObjects.ProductsPage import ProductsPage
 from TestData.ProductPageData import ProductPageData
 from Utils.BaseClass import BaseClass
 
 
 @pytest.mark.skip
-class TestProductsPage(BaseClass):
-    """Tests for the Products Page functionality."""
+class TestProductsPageAdd(BaseClass):
+    """Tests for the Products Page add functionality."""
 
     @pytest.fixture(params=ProductPageData.test_products)
     def get_data(self, request):
@@ -85,6 +84,7 @@ class TestProductsPage(BaseClass):
 
         except Exception as e:
             log.error(f"An error occurred during the test: {e}")
+            raise
 
         # TODO - do i need this function and the add all products from page ? or use only the data
 
