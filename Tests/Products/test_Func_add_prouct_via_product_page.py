@@ -2,13 +2,12 @@ import time
 
 import pytest
 from PageObjects.HomePage import HomePage
-from PageObjects.ProductsPage import ProductsPage
 from TestData.SingleProductPageData import SingleProductPageData
 from Utils.BaseClass import BaseClass
 
 
-#@pytest.mark.skip
-class TestSingleProductPage(BaseClass):
+@pytest.mark.skip
+class TestSingleProductPageAdd(BaseClass):
     """Tests for the Single products Page functionality."""
 
     @pytest.fixture(params=SingleProductPageData.test_single_product)
@@ -21,7 +20,7 @@ class TestSingleProductPage(BaseClass):
         """
         return request.param
 
-    def test_add_products_to_cart(self, get_data):
+    def test_add_products_to_cart_specific(self, get_data):
         """
         Test the functionality of adding a specified single product to the cart and
         verifying that the cart count reflects the addition. The test performs the
@@ -42,7 +41,6 @@ class TestSingleProductPage(BaseClass):
         try:
             # Extract the product name from the test data
             product_name = get_data['product_name']
-
             log.info(f"Starting test with product: {product_name}")
 
             # Log into the application
@@ -94,3 +92,4 @@ class TestSingleProductPage(BaseClass):
 
         except Exception as e:
             log.error(f"An error occurred during the test: {e}")
+            raise
