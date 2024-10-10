@@ -3,6 +3,7 @@ import os
 import logging
 from logging.handlers import RotatingFileHandler
 import pytest
+import selenium.webdriver.support.expected_conditions
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.select import Select
@@ -15,8 +16,10 @@ class BaseClass:
     """Base class for test automation framework providing common utility methods."""
 
     # Locators
+    l_side_menu_button = (By.ID, "react-burger-menu-btn")
     l_shop_cart = (By.CLASS_NAME, "shopping_cart_link")
     l_cart_icon_number_of_products = (By.CSS_SELECTOR, ".shopping_cart_badge")
+    l_title = (By.CSS_SELECTOR, ".title")
 
     # 1. Logging utility
     @staticmethod
@@ -51,13 +54,23 @@ class BaseClass:
         return logger
 
     # 2. Product-specific methods
+    def get_page_title(self):
+
+        title = self._driver.find_element(*self.l_title).text
+        return title
+
     def get_number_of_products_from_cart_icon(self) -> int:
         """Returns the number of products displayed in the cart icon.
 
         :return: The product count as an int.
         """
-        products_count = self._driver.find_element(*self.l_cart_icon_number_of_products).text
-        return int(products_count)
+        try:
+            products_count = self._driver.find_element(*self.l_cart_icon_number_of_products)
+            if products_count.is_displayed():
+                return int(products_count.text)
+        except NoSuchElementException:
+            pass
+        return 0
 
     def click_shopping_cart(self):
         """Navigates to the shopping cart by clicking the cart icon.
@@ -81,6 +94,44 @@ class BaseClass:
             return products_name[0]
 
         return products_name
+
+    def log_out(self):
+        """
+        Logs out of the application using the sidebar's log out method.
+
+        This method first verifies the side menu button is displayed, then
+        clicks the button to open the menu and logs out via the Sidebar object.
+
+        :return: HomePage object representing the user being redirected to the home page.
+        """
+        # Verify the side menu button is visible before proceeding
+        self.verify_element_displayed(self.l_side_menu_button)
+
+        # Open the sidebar by clicking the side menu button
+        self._driver.find_element(*self.l_side_menu_button).click()
+
+        # Perform the logout using the sidebar
+        from PageObjects.SideBar import SideBar
+        if not hasattr(self, '_sidebar'):  # Todo see if needed
+            self._sidebar = SideBar(self._driver)
+            self._sidebar.log_out()
+
+        # Redirect back to the home page after logging out
+        from PageObjects.HomePage import HomePage
+        return HomePage(self._driver)
+
+    def reset_application_state(self):
+        """
+        Resets the application state through the sidebar.
+
+        This method opens the sidebar and calls the reset function from the Sidebar class to clear the session.
+
+        :param _sidebar: Sidebar object used to reset the application state and log out.
+        """
+        self._driver.find_element(*self.l_side_menu_button).click()
+        from PageObjects.SideBar import SideBar
+        self._sidebar = SideBar(self._driver)
+        self._sidebar.reset_app_and_logout()
 
     # 3. General helper methods
 
