@@ -39,7 +39,7 @@ class TestSubmitData(BaseClass):
             products_page.click_shopping_cart()
             checkout_info_page = products_page.checkout()
 
-            checkout_info_page.submit_info(first_name='', last_name='Mor', postal='')
+            checkout_info_page.submit_info(first_name='', last_name='', postal='')
 
             error_message = checkout_info_page.get_submit_error_message()
             assert error_message == expected_error_messages['empty_name'], \
