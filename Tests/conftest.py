@@ -59,10 +59,23 @@ def setup_browser(request):
             # chrome_options.add_argument('--headless=new')
             chrome_options.add_argument('--start-maximized')
             chrome_options.add_argument('--ignore-certificate-errors')
+            chrome_options.add_argument("--disable-autofill")
+            chrome_options.add_argument("--disable-autocomplete")
+
             service = ChromeService(r"browserdriver\\chromedriver128.exe")
             driver = webdriver.Chrome(service=service, options=chrome_options)
 
-        # Add cases for firefox and edge here if needed
+        elif browser_name.lower() == 'firefox':
+            print('FireFox')
+            firefox_options = FirefoxOptions()
+            # Uncomment the line below if you want to run Firefox in headless mode
+            # firefox_options.headless = True
+            # Example of setting a preference
+            # firefox_options.set_preference('dom.disable_open_during_load', True)
+            service = FirefoxService("C:\\browserdriver\\geckodriver.exe")
+            driver = webdriver.Firefox(service=service, options=firefox_options)
+            driver.maximize_window()
+
         else:
             raise ValueError("You should choose a browser between chrome, firefox, or edge")
 
