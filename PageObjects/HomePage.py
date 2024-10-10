@@ -134,7 +134,7 @@ class HomePage(BaseClass):
 
         :return: None
         """
-        return self._driver.find_element(*HomePage.l_user_name).clear()
+        self._driver.find_element(*HomePage.l_user_name).clear()
 
     def clear_password(self):
         """
@@ -142,9 +142,9 @@ class HomePage(BaseClass):
 
         :return: None
         """
-        return self._driver.find_element(*HomePage.l_pw).clear()
+        self._driver.find_element(*HomePage.l_pw).clear()
 
-    def get_login_error_message(self) -> str:
+    def get_login_error_message(self):
         """
         Fetches the error message displayed after a failed login attempt.
 
@@ -158,15 +158,5 @@ class HomePage(BaseClass):
 
         :return: None
         """
-        return self._driver.find_element(*HomePage.l_err_msg_btn).click()
-
-    # TODO: see it this method in necessary , otherwise remove it .
-    def clear_all_login_data(self):
-        """
-        Clears all login data (username, password, and error message if any).
-
-        :return: None
-        """
-        self._driver.find_element(*HomePage.l_user_name).clear()
-        self._driver.find_element(*HomePage.l_pw).clear()
         self._driver.find_element(*HomePage.l_err_msg_btn).click()
+
