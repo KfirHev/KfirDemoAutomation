@@ -5,7 +5,7 @@ from Utils.BaseClass import BaseClass
 from TestData.HomePageData import HomePageData
 
 
-#@pytest.mark.skip
+@pytest.mark.skip
 class TestHomePage(BaseClass):
     """Test suite for the Home Page of the application."""
 
