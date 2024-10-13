@@ -11,7 +11,9 @@ class ProductsPage(BaseClass):
     """Page object model for the Products Page, handling product interactions and cart management."""
 
     # Locators for elements on the Products Page
+    l_all_products = (By.CSS_SELECTOR, ".inventory_item")
     l_all_page_products_names = (By.CSS_SELECTOR, ".inventory_item_name")
+    l_all_product_description = (By.CSS_SELECTOR, ".inventory_item_desc")
     l_all_page_products_prices = (By.CSS_SELECTOR, ".inventory_item_price")
     l_add_to_cart_buttons = (By.XPATH, "//button[text() = 'Add to cart']")
     l_remove_from_cart_buttons = (By.XPATH, "//button[text() = 'Remove']")
@@ -34,6 +36,27 @@ class ProductsPage(BaseClass):
         :return: A list of product names displayed on the products page.
         """
         return self.get_products_name(ProductsPage.l_all_page_products_names)
+
+    def get_product_info(self, product_name):
+
+        products = self._driver.find_elements(*ProductsPage.l_all_products)
+        for product in products:
+            if product_name in product.text:
+                product_image = self._driver.find_element(By.CSS_SELECTOR, f"img[alt='{product_name}']")
+                image_src = product_image.get_attribute('src')
+                info = product.text.split('\n')
+                product_details = info[1]
+                product_price = info[2]
+                return product_details, product_price, image_src
+
+    def get_product_details(self, product_name):
+        return self.get_product_info(product_name)[0]
+
+    def get_product_price(self, product_name):
+        return self.get_product_info(product_name)[1]
+
+    def get_product_image(self, product_name):
+        return self.get_product_info(product_name)[2]
 
     def add_all_products_to_cart(self):
         """
@@ -66,9 +89,11 @@ class ProductsPage(BaseClass):
         Identifies the button dynamically by the product name and performs the specified action
         (either 'add' or 'remove').
 
-        :param product_name: List of product names to be added or removed.
+        :param product_name: Single product or list of product names to be added or removed.
         :param action: Action to perform - 'add' or 'remove'.
         """
+        if type(product_name) is str:  # handle cases where single name is sent
+            product_name = [product_name]
         for product in product_name:
             product_formatted = product.lower().replace(' ', '-')
             if action == 'add':
