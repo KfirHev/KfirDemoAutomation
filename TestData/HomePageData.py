@@ -48,6 +48,25 @@ class HomePageData:
         }
     ]
 
+    test_login_latency = [
+        {
+
+            # Set of valid users for testing successful login
+            'users': [
+                'standard_user',  # A user with standard access privileges
+                'problem_user',  # A user experiencing problems
+                'performance_glitch_user',  # A user that encounters performance issues
+                'error_user',  # A user that causes errors
+                'visual_user'  # A user with visual accessibility needs
+            ],
+
+            'password': 'secret_sauce',  # Valid password used for logging in
+
+            }
+
+    ]
+
+
     # @staticmethod
     # def get_data(self, request):
     #     return request.param
