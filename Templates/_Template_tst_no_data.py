@@ -10,7 +10,7 @@ from Utils.BaseClass import BaseClass
 class Name_TestSingleProductsPageRemove(BaseClass):
     """Tests for the Products Page remove functionality."""
 
-    def test_name(self, get_data):
+    def test_name(self):
 
         log = self.get_logger()
         home_page = HomePage(self.driver)
