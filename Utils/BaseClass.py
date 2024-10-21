@@ -1,16 +1,20 @@
 import inspect
 import os
 import logging
+import time
 from logging.handlers import RotatingFileHandler
 import pytest
 import requests
 from PIL import Image
 from io import BytesIO
+
+from pytest_assume.plugin import assume
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.select import Select
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.common import NoSuchElementException, TimeoutException
+from selenium.webdriver import ActionChains
 
 
 @pytest.mark.usefixtures('setup_browser')
@@ -22,6 +26,13 @@ class BaseClass:
     l_shop_cart = (By.CLASS_NAME, "shopping_cart_link")
     l_cart_icon_number_of_products = (By.CSS_SELECTOR, ".shopping_cart_badge")
     l_title = (By.CSS_SELECTOR, ".title")
+
+    #X window locator
+    l_external_x = (By.CSS_SELECTOR, "a[href='https://twitter.com/saucelabs']")
+    l_search_button = (By.CSS_SELECTOR, "button[aria-label='Search']")
+    l_hover_link = (By.XPATH, "(// span[text() = 'Sauce Labs'])[3]")
+    l_close_welcome_banner = (By.CSS_SELECTOR, "button[role='button']")
+    l_hover_text = (By.XPATH, "(//div//span[contains(text(), 'trusted digital')])[1]")
 
     # 1. Logging utility
     @staticmethod
@@ -54,6 +65,17 @@ class BaseClass:
         logger.addHandler(file_handler)
         logger.setLevel(logging.DEBUG)
         return logger
+
+    @staticmethod
+    def log_assumption(condition, success_message, failure_message, log):
+        """
+        Helper function to log assumptions and handle errors.
+        """
+        assume(condition)
+        if not condition:
+            log.error(f"Failure: {failure_message}")  # Log error with a "Failure:" prefix
+        else:
+            log.info(success_message)  # Log the success message directly
 
     # 2. Product-specific methods
     def get_page_title(self) -> str:
@@ -105,7 +127,7 @@ class BaseClass:
         :return: HomePage object representing the home page after logging out.
         """
         # Verify the side menu button is visible
-        self.verify_element_displayed(self.l_side_menu_button)
+        self.verify_link_clickable(*self.l_side_menu_button)
 
         # Open the sidebar by clicking the side menu button
         self._driver.find_element(*self.l_side_menu_button).click()
@@ -129,6 +151,46 @@ class BaseClass:
         from PageObjects.SideBar import SideBar
         self._sidebar = SideBar(self._driver)
         self._sidebar.reset_app_and_logout()
+
+    def open_and_verify_link_to_x(self):
+        """
+        Opens the link to the external website X, switches to the newly opened window,
+        retrieves the title and the text from the first hover card, then closes the new window and returns to the original one.
+
+        Returns:
+            tuple: A tuple containing the title of the newly opened window and the text from the first hover card.
+        """
+        # Click the link to open the new window
+        self._driver.find_element(*self.l_external_x).click()
+
+        # Get all window handles and switch to the newly opened window
+        opened_windows = self._driver.window_handles
+        self._driver.switch_to.window(opened_windows[1])
+
+        # Capture the title of the new window
+        expected_title = 'Sauce Labs (@saucelabs) / X'
+        WebDriverWait(self._driver, 5).until(lambda d: d.title == expected_title)
+        title = self._driver.title
+
+        # Close the welcome banner if it exists
+        self._driver.find_element(*self.l_close_welcome_banner).click()
+
+        # Scroll down the page to make the hover element visible
+        self._driver.execute_script("window.scrollBy(0,1000);")
+
+        # Perform hover action on the designated element
+        action = ActionChains(self._driver)
+        action.move_to_element(self._driver.find_element(*self.l_hover_link)).perform()
+
+        # Retrieve the text from the first hover card
+        hover_text = self._driver.find_element(*self.l_hover_text).text
+        print(hover_text)  # Optional: for debugging
+
+        # Close the new window and switch back to the original
+        self._driver.close()
+        self._driver.switch_to.window(opened_windows[0])
+
+        return title, hover_text
 
     # 3. General helper methods
 
