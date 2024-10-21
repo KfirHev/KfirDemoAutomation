@@ -86,13 +86,3 @@ class TestProductsPageAdd(BaseClass):
             log.error(f"An error occurred during the test: {e}")
             raise
 
-        # TODO - do i need this function and the add all products from page ? or use only the data
-
-        # # Add all products on product's page to the cart
-        # products_page = home_page.login('standard_user', 'secret_sauce')
-        # products_page.add_all_products_to_cart()
-        # cart_page = products_page.click_shopping_cart()
-        #
-        # products_in_cart = cart_page.get_page_products_name()
-        # assert set(product_names) == set(products_in_cart)
-        # cart_page.reset_application_state()
