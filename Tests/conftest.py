@@ -62,7 +62,7 @@ def setup_browser(request):
             chrome_options.add_argument("--disable-autofill")
             chrome_options.add_argument("--disable-autocomplete")
 
-            service = ChromeService(r"browserdriver\\chromedriver128.exe")
+            service = ChromeService(r"browserdriver\\chromedriver129.exe")
             driver = webdriver.Chrome(service=service, options=chrome_options)
 
         elif browser_name.lower() == 'firefox':
