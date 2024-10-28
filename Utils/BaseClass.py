@@ -1,7 +1,7 @@
 import inspect
 import os
-import logging
 import time
+import logging
 from logging.handlers import RotatingFileHandler
 import pytest
 import requests
@@ -27,7 +27,7 @@ class BaseClass:
     l_cart_icon_number_of_products = (By.CSS_SELECTOR, ".shopping_cart_badge")
     l_title = (By.CSS_SELECTOR, ".title")
 
-    #X window locator
+    # X window locator for demo purposes
     l_external_x = (By.CSS_SELECTOR, "a[href='https://twitter.com/saucelabs']")
     l_search_button = (By.CSS_SELECTOR, "button[aria-label='Search']")
     l_hover_link = (By.XPATH, "(// span[text() = 'Sauce Labs'])[3]")
