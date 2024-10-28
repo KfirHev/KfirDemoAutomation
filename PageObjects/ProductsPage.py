@@ -1,6 +1,5 @@
 import time
 from selenium.webdriver.common.by import By
-from PageObjects.CheckOutInfoPage import CheckOutInfoPage
 from Utils.BaseClass import BaseClass
 from PageObjects.SingleProductPage import SingleProductPage
 
@@ -22,7 +21,6 @@ class ProductsPage(BaseClass):
     l_add_to_cart_buttons = (By.XPATH, "//button[text() = 'Add to cart']")
     l_remove_from_cart_buttons = (By.XPATH, "//button[text() = 'Remove']")
     l_sort_dropdown = (By.CSS_SELECTOR, ".product_sort_container")
-    l_checkout_button = (By.ID, 'checkout')
 
     def __init__(self, driver):
         """
@@ -189,12 +187,3 @@ class ProductsPage(BaseClass):
         elif sorting_option == 'Price (high to low)':
             product_list = [float(pr.text.strip('$')) for pr in products_prices]
             return product_list == sorted(product_list, reverse=True)
-
-    def checkout(self):
-        """
-        Clicks the checkout button to proceed to the checkout information page.
-
-        :return: An instance of the CheckOutInfoPage class.
-        """
-        self._driver.find_element(*ProductsPage.l_checkout_button).click()
-        return CheckOutInfoPage(self._driver)
