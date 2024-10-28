@@ -1,4 +1,5 @@
 from selenium.webdriver.common.by import By
+from PageObjects.CheckOutInfoPage import CheckOutInfoPage
 from PageObjects.SideBar import SideBar
 from Utils.BaseClass import BaseClass
 
@@ -10,6 +11,7 @@ class CartPage(BaseClass):
     l_all_page_products_names = (By.CSS_SELECTOR, ".inventory_item_name")
     l_continue_shopping_button = (By.ID, "continue-shopping")
     l_remove_from_cart_buttons = (By.XPATH, "//button[text() = 'Remove']")
+    l_checkout_button = (By.ID, 'checkout')
 
     def __init__(self, driver):
         """
@@ -28,6 +30,15 @@ class CartPage(BaseClass):
         """
         # Using BaseClass method
         return self.get_products_name(CartPage.l_all_page_products_names)
+
+    def checkout(self):
+        """
+        Clicks the checkout button to proceed to the checkout information page.
+
+        :return: An instance of the CheckOutInfoPage class.
+        """
+        self._driver.find_element(*CartPage.l_checkout_button).click()
+        return CheckOutInfoPage(self._driver)
 
     def continue_shopping(self):
         self._driver.find_element(*CartPage.l_continue_shopping_button).click()
