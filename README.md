@@ -59,7 +59,13 @@ KfirDemoAutomation/
         Python dependencies for the project
 
 ## Getting Started
-## Prerequisites
-Python 3.x
-Selenium WebDriver
-Docker (optional, for containerized tests) 
+
+### Prerequisites
+- **Python 3.x**  
+- **Selenium WebDriver**  
+- **Docker** (optional, for containerized tests)  
+
+
+
+
+
