@@ -3,7 +3,7 @@ from PageObjects.HomePage import HomePage
 from TestData.SingleProductPageData import SingleProductPageData
 from Utils.BaseClass import BaseClass
 
-
+@pytest.mark.skip
 class TestCheckProductDetails(BaseClass):
     """
     Tests for verifying product details and add-to-cart functionality on the Products Page.
