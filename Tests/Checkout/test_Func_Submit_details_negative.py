@@ -6,7 +6,7 @@ from TestData.CheckOutInfoPageData import CheckOutInfoPageData
 from Utils.BaseClass import BaseClass
 
 
-# @pytest.mark.skip
+@pytest.mark.skip
 class TestSubmitData(BaseClass):
     """Tests for the Products Page remove functionality."""
 
@@ -35,9 +35,10 @@ class TestSubmitData(BaseClass):
             products_page = home_page.login()
             log.info("Login successful")
 
+
             products_page.add_all_products_to_cart()
-            products_page.click_shopping_cart()
-            checkout_info_page = products_page.checkout()
+            cart_page = products_page.click_shopping_cart()
+            checkout_info_page = cart_page.checkout()
 
             checkout_info_page.submit_info(first_name='', last_name='', postal='')
 
