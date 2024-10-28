@@ -29,8 +29,8 @@ class TestSubmitData(BaseClass):
 
             # Add all products to the cart and navigate to checkout
             products_page.add_all_products_to_cart()
-            products_page.click_shopping_cart()
-            checkout_info_page = products_page.checkout()
+            cart_page = products_page.click_shopping_cart()
+            checkout_info_page = cart_page.checkout()
 
             # Submit default checkout info (first name: 'Lara', last name: 'Croft', postal: 'US50203040')
             check_out_overview_page = checkout_info_page.submit_info()
