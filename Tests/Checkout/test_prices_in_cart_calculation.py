@@ -51,8 +51,9 @@ class TestPriceInCartCalc(BaseClass):
             log.info(f"Added {product_name_from_data} to the cart")
 
             # Proceed to the shopping cart and initiate the checkout process
-            products_page.click_shopping_cart()
-            checkout_info_page = products_page.checkout()
+
+            cart_page = products_page.click_shopping_cart()
+            checkout_info_page = cart_page.checkout()
 
             # Submit default checkout information
             check_out_overview_page = checkout_info_page.submit_info()
