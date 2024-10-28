@@ -23,7 +23,7 @@ class SideBar(BaseClass):
         super().__init__()
         self._driver = driver
 
-    def log_out(self):
+    def log_out(self):  # TODO see if needed or move to baseline...seems the right thing
         """
         Logs out of the application by clicking the log-out link in the sidebar.
 
