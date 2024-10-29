@@ -85,10 +85,11 @@ KfirDemoAutomation/
 ## Next Developments
 
 Future improvements include adding:
-- Additional browser support.
-- Enhanced reporting features (Allure)
-- CI/CD  E.g Jenkins jobs
-- Improving this readme file , with container commands and demo screenshots 
+- Expanded browser compatibility for cross-browser testing
+- Demonstration of API testing and backend database integration
+- Enhanced reporting capabilities, such as Allure integration for richer test insights
+- CI/CD pipeline configuration, including Jenkins job setup
+- Detailed README updates, including Docker command instructions and example screenshots for a clearer demo experience 
 
 ## Contributing
 
