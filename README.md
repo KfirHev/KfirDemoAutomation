@@ -82,9 +82,10 @@ KfirDemoAutomation/
     docker run kfirdemoautomation
     ```
 
-## Next Developments
+## Planned Enhancements
 
-Future improvements include adding:
+Future updates will aim to extend the functionality and robustness of this framework, with potential additions including:
+
 - Expanded browser compatibility for cross-browser testing
 - Demonstration of API testing and backend database integration
 - Enhanced reporting capabilities, such as Allure integration for richer test insights
