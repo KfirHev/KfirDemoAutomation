@@ -78,6 +78,10 @@ KfirDemoAutomation/
 
 ### Usage
 
+**Example run via PyCharm**
+
+https://github.com/user-attachments/assets/d38be0c4-8d73-4655-af75-31a1b375bab2
+
 1. To run tests:
     ```bash
     pytest
