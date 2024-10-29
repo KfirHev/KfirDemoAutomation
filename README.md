@@ -49,6 +49,8 @@ KfirDemoAutomation/
         Python dependencies for the project  
 
 ## Getting Started
+**Example ETE test**
+![TestFullPurchase](https://github.com/user-attachments/assets/fc183f61-086f-48e8-ab29-d5c3c504adff)
 
 ### Prerequisites
 - **Python 3.x**  
