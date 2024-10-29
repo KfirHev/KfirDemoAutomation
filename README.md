@@ -50,7 +50,9 @@ KfirDemoAutomation/
 
 ## Getting Started
 **Example ETE test**
-![TestFullPurchase](https://github.com/user-attachments/assets/fc183f61-086f-48e8-ab29-d5c3c504adff)
+
+![TestFullPurchas](https://github.com/user-attachments/assets/37226fe2-e876-40e3-be14-ed91e3a1c0cf)
+
 
 ### Prerequisites
 - **Python 3.x**  
