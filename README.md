@@ -82,16 +82,18 @@ KfirDemoAutomation/
 
 https://github.com/user-attachments/assets/d38be0c4-8d73-4655-af75-31a1b375bab2
 
-1. To run tests:
-    ```bash
-    pytest
-    ```
+### Running Tests
 
-2. To run tests in a Docker container:
-    ```bash
-    docker build -t kfirdemoautomation .
-    docker run kfirdemoautomation
-    ```
+1. **To run tests from the command line using Python's virtual environment**:
+   - First, activate the virtual environment by running `. \YourProjectName\.venv\Scripts\activate`.
+   - Then, execute the tests by typing `pytest`. (For customization options, refer to the options section below.)
+
+2. **To run tests in a Docker container**:
+   - Build the Docker image and run the container.
+
+**Customizable Options**:
+- Use `--browser_type` to specify the browser (default is chrome; other options include firefox and edge).
+- Use `--run_env` to choose the environment (default is local; you can also select docker).
 
 ## Planned Enhancements
 
