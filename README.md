@@ -99,7 +99,7 @@ https://github.com/user-attachments/assets/d38be0c4-8d73-4655-af75-31a1b375bab2
 
 Future updates will aim to extend the functionality and robustness of this framework, with potential additions including:
 
-- Expanded browser compatibility for cross-browser testing
+- Expanded browser compatibility for cross-browser testing in headless mode as an cmd line option
 - Demonstration of API testing and backend database integration
 - Enhanced reporting capabilities, such as Allure integration for richer test insights
 - CI/CD pipeline configuration, including Jenkins job setup
