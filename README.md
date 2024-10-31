@@ -63,7 +63,7 @@ KfirDemoAutomation/
 
 1. Clone this repository to your local machine:
     ```bash
-    git clone https://github.com/username/KfirDemoAutomation.git
+    git clone https://github.com/KfirHev/KfirDemoAutomation.git
     ```
 
 2. Navigate into the project directory:
