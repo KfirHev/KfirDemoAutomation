@@ -105,7 +105,7 @@ def pytest_configure(config):
     timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
     report_dir = 'Reports'
     os.makedirs(report_dir, exist_ok=True)
-    report_filename = f"{report_dir}/report_{timestamp}.html"
+    report_filename = f"{report_dir}/Report_{timestamp}.html"
 
     # Store the HTML report path in the pytest configuration
     config.option.htmlpath = report_filename
