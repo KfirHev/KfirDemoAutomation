@@ -1,7 +1,6 @@
 # KfirDemoAutomation
 
-![image](https://github.com/user-attachments/assets/b9a498af-d6a8-438d-8784-ee8cfcc03bdc)
-
+![image](https://github.com/user-attachments/assets/ba8df7ef-9fd9-4831-b6cf-17f487e01f27)
 
 **An automation framework for testing [SauceDemo](https://www.saucedemo.com/) with Selenium and pytest.**  
 Designed for high flexibility and modularity, the framework facilitates efficient browser-based testing and provides HTML reports with screenshots and logging for thorough test insights.  
@@ -102,6 +101,10 @@ https://github.com/user-attachments/assets/d38be0c4-8d73-4655-af75-31a1b375bab2
 
 ### View Reports
 
+
+https://github.com/user-attachments/assets/c686d899-91cc-4702-9b9a-3215943d28af
+
+
 #### HTML Reports
 
 1. Browse to the project Reports folder and choose the report ,you can drag and drop it to any browser to view it.
@@ -121,7 +124,8 @@ https://github.com/user-attachments/assets/d38be0c4-8d73-4655-af75-31a1b375bab2
  - Inside the build details, you can find links to test reports, typically labeled as “Test Results” or under “HTML Publisher Plugin” if configured.
 3. Detailed Test Analysis: The Jenkins report displays test statuses, including any test failures, along with logs. You’ll also see an option to view error screenshots and logs for failed tests if configured to save these artifacts.
 4. Trend Analysis: Jenkins provides a view of historical test data, helping track trends in test pass/fail rates over time, enabling insights into project quality and stability.
-
+   
+     ![image](https://github.com/user-attachments/assets/14e6db20-42f4-4823-a63d-b67cf055fb84)
 
 ## Planned Enhancements
 
