@@ -5,6 +5,7 @@
       <excludeFolder url="file://$MODULE_DIR$/.venv" />
       <excludeFolder url="file://$MODULE_DIR$/Reports" />
       <excludeFolder url="file://$MODULE_DIR$/Screenshots" />
+      <excludeFolder url="file://$MODULE_DIR$/Tests/Reports" />
     </content>
     <orderEntry type="jdk" jdkName="Python 3.12 (KfirDemoAutomation)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
