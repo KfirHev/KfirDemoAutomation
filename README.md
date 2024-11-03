@@ -99,9 +99,12 @@ https://github.com/user-attachments/assets/d38be0c4-8d73-4655-af75-31a1b375bab2
 
 #### HTML Reports
 
-1.Browse to the project Reports folder and choose the report ,you can drag and drop it to any browser to view it.
+1.Browse to the project Reports folder and choose the report ,you can drag and drop it to any browser to view it./n
+
 2.The HTML report name represent the date & time of the run.
-3.The report include all the run data for each test case and their status 
+
+3.The report include all the run data for each test case and their status
+
 4.Upon failure the report will include the screenshot when it failed and the specific error logs
 
 #### Jenkins Reports 
