@@ -99,29 +99,32 @@ https://github.com/user-attachments/assets/d38be0c4-8d73-4655-af75-31a1b375bab2
 
 #### HTML Reports
 
-1.Browse to the project Reports folder and choose the report ,you can drag and drop it to any browser to view it.
+1. Browse to the project Reports folder and choose the report ,you can drag and drop it to any browser to view it.
 
-2.The HTML report name represent the date & time of the run.
+2. The HTML report name represent the date & time of the run.
 
-3.The report include all the run data for each test case and their status
+3. The report include all the run data for each test case and their status
 
-4.Upon failure the report will include the screenshot when it failed and the specific error logs
+4. Upon failure the report will include the screenshot when it failed and the specific error logs
 
 #### Jenkins Reports 
 
-1.Open the Jenkins view 
+1. Access Jenkins: Open your Jenkins instance and navigate to the project for which the tests were executed.
 
+2. View Report in Jenkins:
+ - Locate the “Build History” section and select the specific build you want to analyze.
+ - Inside the build details, you can find links to test reports, typically labeled as “Test Results” or under “HTML Publisher Plugin” if configured.
+3. Detailed Test Analysis: The Jenkins report displays test statuses, including any test failures, along with logs. You’ll also see an option to view error screenshots and logs for failed tests if configured to save these artifacts.
+4. Trend Analysis: Jenkins provides a view of historical test data, helping track trends in test pass/fail rates over time, enabling insights into project quality and stability.
 
 
 ## Planned Enhancements
 
 Future updates will aim to extend the functionality and robustness of this framework, with potential additions including:
 
-- Expanded browser compatibility for cross-browser testing in headless mode as an cmd line option
 - Demonstration of API testing and backend database integration
 - Enhanced reporting capabilities, such as Allure integration for richer test insights
-- CI/CD pipeline configuration, including Jenkins job setup
-- Detailed README updates, including Docker command instructions and example screenshots for a clearer demo experience 
+- Detailed README updates, including Docker command instructions ,setting up Jenkins job/pipeline and example screenshots for a clearer demo experience 
 
 ## Contributing
 
