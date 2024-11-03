@@ -1,46 +1,28 @@
-# Use Windows Server Core as the base image
-FROM mcr.microsoft.com/windows/servercore:ltsc2022
+# Use the official Python image
+FROM python:3.12-slim
 
-# Set the shell to PowerShell for the following RUN commands
-SHELL ["powershell", "-Command"]
-
-
-# Install Python 3.12.4
-RUN Invoke-WebRequest -Uri https://www.python.org/ftp/python/3.12.4/python-3.12.4-amd64.exe -OutFile python-installer.exe
-RUN Start-Process -FilePath python-installer.exe -Args '/silent /install TargetDir=C:\Python' -NoNewWindow -Wait
-RUN Remove-Item -Force python-installer.exe
-RUN [System.Environment]::SetEnvironmentVariable('PATH', $env:PATH + ';C:\Python', [System.EnvironmentVariableTarget]::Machine)
-
-# Install Chrome
-RUN Invoke-WebRequest -Uri https://storage.googleapis.com/chrome-for-testing-public/129.0.6668.58/win64/chrome-win64.zip -OutFile chrome_win64.zip
-RUN Expand-Archive -Path chrome_win64.zip -DestinationPath 'C:\Program Files\Chrome' -Force
-RUN Remove-Item -Force chrome_win64.zip
-
-# Install ChromeDriver (compatible with Chrome version 129.0.6668.58)
-RUN Invoke-WebRequest -Uri https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/129.0.6668.58/win64/chromedriver-win64.zip -OutFile chromedriver_win64.zip
-RUN Expand-Archive -Path chromedriver_win64.zip -DestinationPath 'C:\Program Files\Chrome\ChromeDriver' -Force
-RUN if (Test-Path 'C:\Program Files\Chrome\ChromeDriver\chromedriver.exe') { Write-Host "ChromeDriver installed" } else { Write-Host "ChromeDriver not installed" }
-RUN Remove-Item -Force chromedriver_win64.zip
-
-
-# Install Firefox
-#RUN Invoke-WebRequest -Uri https://download.mozilla.org/?product=firefox-stable&os=win64&lang=en-US -OutFile firefox_installer.exe
-#RUN Start-Process -FilePath firefox_installer.exe -Args '/silent /install' -NoNewWindow -Wait
-#RUN Remove-Item -Force firefox_installer.exe
-
-
-# Set environment variables for browser drivers (assuming the drivers will be in the container's project folder)
-ENV CHROMEWEBDRIVER="C:\\Program Files\\Chrome\\ChromeDriver\\chromedriver-win64\chromedriver.exe"
-ENV PATH="C:\\Python;C:\\Python\\Scripts;C:\\Program Files\\Chrome\chrome-win64;C:\\Program Files\\Chrome\\ChromeDriver\\chromedriver-win64"
-
-# Set the working directory to /app where your code will be mounted or copied
+# Set the working directory
 WORKDIR /app
 
-# Copy the project files, including requirements.txt, into the container
+# Copy the requirements file into the container
+COPY requirements.txt .
+
+# Install required packages
+RUN apt-get update && \
+    apt-get install -y wget gnupg2 curl && \
+    curl -fsSL https://dl.google.com/linux/linux_signing_key.pub | apt-key add - && \
+    echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google-chrome.list && \
+    apt-get update && \
+    apt-get install -y google-chrome-stable && \
+    apt-get install -y chromium-driver && \
+    pip install --no-cache-dir -r requirements.txt && \
+    apt-get clean && rm -rf /var/lib/apt/lists/*
+
+# Copy the rest of your application code into the container
 COPY . .
 
-# Install Python dependencies from requirements.txt
-RUN ["C:\\Python\\python.exe", "-m", "pip", "install", "-r", "requirements.txt"]
+# Set the display port to avoid crashes
+ENV DISPLAY=:99
 
-#Set the default command to run tests
-#CMD ["pytest", "--run_env=docker", "--maxfail=1", "--disable-warnings", "-v", "--html=Reports/report.html"]
+# Command to run your tests in headless mode
+CMD ["pytest", "--run_env", "docker", "--headless"]
