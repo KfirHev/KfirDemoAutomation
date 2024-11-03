@@ -31,7 +31,7 @@ def pytest_addoption(parser):
 # Browser Options for Local Run
 def setup_chrome_options():
     options = ChromeOptions()
-    options.add_argument('--headless=new')  # Uncomment for headless mode
+    options.add_argument('--headless')  # Uncomment for headless mode
     options.add_argument('--start-maximized')
     options.add_argument('--ignore-certificate-errors')
     options.add_argument("--disable-autofill")
