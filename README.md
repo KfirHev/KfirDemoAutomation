@@ -47,8 +47,9 @@ KfirDemoAutomation/
 │  
 └── requirements.txt  
         Python dependencies for the project  
----
 
+
+---
 **Note:** The `Logs/`, `Reports/`, and `Screenshots/` directories are git ignored due to the frequent generation of files that are not necessary for version control.
 
 
