@@ -99,7 +99,7 @@ https://github.com/user-attachments/assets/d38be0c4-8d73-4655-af75-31a1b375bab2
 
 #### HTML Reports
 
-1.Browse to the project Reports folder and choose the report ,you can drag and drop it to any browser to view it./n
+1.Browse to the project Reports folder and choose the report ,you can drag and drop it to any browser to view it.
 
 2.The HTML report name represent the date & time of the run.
 
