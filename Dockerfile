@@ -25,4 +25,6 @@ COPY . .
 ENV DISPLAY=:99
 
 # Command to run your tests in headless mode
-CMD ["pytest", "--run_env", "docker", "--headless"]
+CMD ["pytest", "--run_env=docker"]
+
+
