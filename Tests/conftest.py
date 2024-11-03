@@ -19,10 +19,49 @@ driver = None
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
+def setup_browser_options(browser_name, headless=False):
+    """
+    Sets up the browser options based on the browser type.
+
+    Args:
+        browser_name (str): The name of the browser to set options for.
+        headless (bool): Whether to run the browser in headless mode.
+
+    Returns:
+        options: The configured browser options.
+    """
+    if browser_name.lower() == 'chrome':
+        options = ChromeOptions()
+        options.add_argument('--start-maximized')
+        options.add_argument('--ignore-certificate-errors')
+        options.add_argument("--disable-autofill")
+        options.add_argument("--disable-autocomplete")
+        if headless:
+            options.add_argument('--headless')
+        return options
+
+    elif browser_name.lower() == 'firefox':
+        options = FirefoxOptions()
+        if headless:
+            options.headless = True
+        return options
+
+    elif browser_name.lower() == 'edge':
+        options = EdgeOptions()
+        options.add_argument('--start-maximized')
+        options.add_argument('--ignore-certificate-errors')
+        options.add_argument("--disable-autofill")
+        options.add_argument("--disable-autocomplete")
+        if headless:
+            options.add_argument('--headless')
+        return options
+
+    else:
+        raise ValueError("You should choose a browser between chrome, firefox, or edge")
 
 def pytest_addoption(parser):
     """
-    Adds command-line options for browser type and environment to pytest.
+    Adds command-line options for browser type, headless mode, and environment to pytest.
 
     Args:
         parser: The parser object to add command-line options.
@@ -31,9 +70,11 @@ def pytest_addoption(parser):
         "--browser_type", action="store", default="chrome", help="Specify the browser: chrome, firefox, or edge"
     )
     parser.addoption(
+        "--headless", action="store_true", help="Run browser in headless mode"
+    )
+    parser.addoption(
         "--run_env", action="store", default="local", help="Specify the environment: local or docker"
     )
-
 
 @pytest.fixture(scope='class')
 def setup_browser(request):
@@ -48,33 +89,56 @@ def setup_browser(request):
     """
     global driver
     browser_name = request.config.getoption('browser_type')
+    headless = request.config.getoption('headless')
     run_env = request.config.getoption('run_env')
 
     # Set up browser based on the environment and browser type
     if run_env == 'local':
+        options = setup_browser_options(browser_name, headless)
+
         if browser_name.lower() == 'chrome':
             print('Chrome - Local')
-            chrome_options = ChromeOptions()
-            # Uncomment below line to run tests in headless mode
-            # chrome_options.add_argument('--headless=new')
-            chrome_options.add_argument('--start-maximized')
-            chrome_options.add_argument('--ignore-certificate-errors')
-            chrome_options.add_argument("--disable-autofill")
-            chrome_options.add_argument("--disable-autocomplete")
-
             service = ChromeService(r"browserdriver\\chromedriver129.exe")
-            driver = webdriver.Chrome(service=service, options=chrome_options)
+            driver = webdriver.Chrome(service=service, options=options)
 
         elif browser_name.lower() == 'firefox':
-            print('FireFox')
-            firefox_options = FirefoxOptions()
-            # Uncomment the line below if you want to run Firefox in headless mode
-            # firefox_options.headless = True
-            # Example of setting a preference
-            # firefox_options.set_preference('dom.disable_open_during_load', True)
+            print('FireFox - Local')
             service = FirefoxService("C:\\browserdriver\\geckodriver.exe")
-            driver = webdriver.Firefox(service=service, options=firefox_options)
+            driver = webdriver.Firefox(service=service, options=options)
             driver.maximize_window()
+
+        elif browser_name.lower() == 'edge':
+            print('Edge - Local')
+            service = EdgeService("C:\\browserdriver\\msedgedriver.exe")
+            driver = webdriver.Edge(service=service, options=options)
+
+        else:
+            raise ValueError("You should choose a browser between chrome, firefox, or edge")
+
+    elif run_env == 'docker':
+        if browser_name.lower() == 'chrome':
+            print('Chrome - Docker')
+            chrome_options = setup_browser_options(browser_name, headless)
+            driver = webdriver.Remote(
+                command_executor='http://localhost:4444/wd/hub',
+                options=chrome_options
+            )
+
+        elif browser_name.lower() == 'firefox':
+            print('FireFox - Docker')
+            firefox_options = setup_browser_options(browser_name, headless)
+            driver = webdriver.Remote(
+                command_executor='http://localhost:4444/wd/hub',
+                options=firefox_options
+            )
+
+        elif browser_name.lower() == 'edge':
+            print('Edge - Docker')
+            edge_options = setup_browser_options(browser_name, headless)
+            driver = webdriver.Remote(
+                command_executor='http://localhost:4444/wd/hub',
+                options=edge_options
+            )
 
         else:
             raise ValueError("You should choose a browser between chrome, firefox, or edge")
@@ -93,7 +157,6 @@ def setup_browser(request):
     time.sleep(4)  # Pause for demo purposes
     driver.quit()
 
-
 def pytest_configure(config):
     """
     Configures the test report settings, such as setting up the directory and file name for HTML reports.
@@ -109,7 +172,6 @@ def pytest_configure(config):
 
     # Store the HTML report path in the pytest configuration
     config.option.htmlpath = report_filename
-
 
 def _capture_screenshot(file_path):
     """
@@ -148,7 +210,6 @@ def _capture_screenshot(file_path):
 
     except Exception as e:
         logger.error(f"Error capturing screenshot: {e}")
-
 
 @pytest.hookimpl(hookwrapper=True)
 def pytest_runtest_makereport(item):
