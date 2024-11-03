@@ -47,6 +47,10 @@ KfirDemoAutomation/
 │  
 └── requirements.txt  
         Python dependencies for the project  
+---
+
+**Note:** The `Logs/`, `Reports/`, and `Screenshots/` directories are git ignored due to the frequent generation of files that are not necessary for version control.
+
 
 ## Getting Started
 **Example ETE test**
@@ -130,6 +134,3 @@ Future updates will aim to extend the functionality and robustness of this frame
 
 This project is designed for demonstration purposes and is currently set as read-only for showcasing the framework’s capabilities. Contributions are not open at this time, but feel free to explore and use the code as a reference for similar projects.
 
----
-
-**Note:** The `Logs/`, `Reports/`, and `Screenshots/` directories are git ignored due to the frequent generation of files that are not necessary for version control.
