@@ -6,7 +6,7 @@ from TestData.CheckOutInfoPageData import CheckOutInfoPageData
 from Utils.BaseClass import BaseClass
 
 
-@pytest.mark.skip
+
 class TestSubmitData(BaseClass):
     """Tests for the Products Page remove functionality."""
 

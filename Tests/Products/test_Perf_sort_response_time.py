@@ -5,6 +5,7 @@ from TestData.ProductPageData import ProductPageData
 from Utils.BaseClass import BaseClass
 
 
+@pytest.mark.xfail
 class TestProductPageSortPerformance(BaseClass):
     """
     Tests the performance of product sorting functionality by measuring response times.

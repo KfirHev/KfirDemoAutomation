@@ -4,7 +4,7 @@ from PageObjects.HomePage import HomePage
 from Utils.BaseClass import BaseClass
 
 
-@pytest.mark.skip
+#@pytest.mark.skip
 class TestProductsPageRemove(BaseClass):
     """Tests for the Products Page remove functionality."""
 

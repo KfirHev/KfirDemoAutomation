@@ -3,7 +3,6 @@ from PageObjects.HomePage import HomePage
 from Utils.BaseClass import BaseClass
 
 
-@pytest.mark.skip
 class TestSubmitData(BaseClass):
     """
     Test class for submitting checkout information.

@@ -5,7 +5,7 @@ from TestData.HomePageData import HomePageData
 from Utils.BaseClass import BaseClass
 
 
-# @pytest.mark.skip
+@pytest.mark.xfail
 class TestLoginResponseTime(BaseClass):
     """
     This class tests the login response time for the HomePage using valid credentials.

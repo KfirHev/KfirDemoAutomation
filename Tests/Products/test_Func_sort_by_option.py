@@ -5,7 +5,7 @@ from TestData.ProductPageData import ProductPageData
 from Utils.BaseClass import BaseClass
 
 
-@pytest.mark.skip
+#@pytest.mark.skip
 class TestProductPageSort(BaseClass):
     """Tests for the Products Page sorting functionality."""
 
