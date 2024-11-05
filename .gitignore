@@ -3,7 +3,7 @@ Reports/
 TEMP
 Screenshots/
 TEMP_KFIR/
-*.log
+Logs
 *.html
 __pycache__/
 *.py[cod]
