@@ -1,0 +1,9 @@
+.venv/
+Reports/
+TEMP
+Screenshots/
+Logs
+*.html
+__pycache__/
+*.py[cod]
+*.pyc
