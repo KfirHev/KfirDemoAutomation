@@ -6,7 +6,7 @@ from TestData.SingleProductPageData import SingleProductPageData
 from Utils.BaseClass import BaseClass
 
 
-@pytest.mark.skip
+# @pytest.mark.skip
 class TestSingleProductPageAdd(BaseClass):
     """Tests for the Single products Page functionality."""
 

@@ -18,7 +18,6 @@ class TestLinkToX(BaseClass):
     6. Reset the application state to ensure a clean slate for other tests.
     """
 
-    @pytest.mark.skip
     def test_link_to_x(self):
         """
         Verifies that clicking the external link opens the correct X page,

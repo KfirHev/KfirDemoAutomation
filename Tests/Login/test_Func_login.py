@@ -4,7 +4,7 @@ from TestData.HomePageData import HomePageData
 from Utils.BaseClass import BaseClass
 
 
-@pytest.mark.skip
+
 class TestLogin(BaseClass):
     """
     This class tests the login functionality of the HomePage using valid credentials

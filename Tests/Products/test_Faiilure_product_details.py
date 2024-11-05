@@ -4,7 +4,7 @@ from TestData.SingleProductPageData import SingleProductPageData
 from Utils.BaseClass import BaseClass
 
 
-@pytest.mark.skip
+#@pytest.mark.skip
 class TestCheckProductDetailsFailure(BaseClass):
     """
     Tests for verifying product details and add-to-cart functionality on the Products Page.
@@ -33,7 +33,7 @@ class TestCheckProductDetailsFailure(BaseClass):
         """
         return request.param
 
-    @pytest.mark.skip
+
     @pytest.mark.xfail(reason="Expected to fail when using user 'visual_user'.")
     def test_check_product_info(self, get_data):
         """
