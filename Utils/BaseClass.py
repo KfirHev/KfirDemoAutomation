@@ -127,7 +127,7 @@ class BaseClass:
         :return: HomePage object representing the home page after logging out.
         """
         # Verify the side menu button is visible
-        self.verify_link_clickable(*self.l_side_menu_button)
+        self.verify_link_clickable(self.l_side_menu_button)
 
         # Open the sidebar by clicking the side menu button
         self._driver.find_element(*self.l_side_menu_button).click()
