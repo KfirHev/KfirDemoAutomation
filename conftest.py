@@ -41,6 +41,10 @@ def setup_browser_options(browser, run_env):
             options.add_argument("--disable-gpu")
         else:
             options.add_argument("--headless")
+            options.add_argument("--headless")
+            options.add_argument("--no-sandbox")
+            options.add_argument("--disable-dev-shm-usage")
+            options.add_argument("--disable-gpu")
             #options.add_argument("--start-maximized")
             options.add_argument("--ignore-certificate-errors")
             options.add_argument("--disable-autofill")
@@ -65,8 +69,9 @@ def setup_browser(request):
 
     # Local or Docker Run
     if run_env == 'local':
+        print('Running LOCAL')
         if browser_name == 'chrome':
-            service = ChromeService(r"browserdriver/chromedriver129.exe")
+            service = ChromeService(r"browserdriver/chromedriver130.exe")
             driver = webdriver.Chrome(service=service, options=setup_browser_options(browser_name, run_env))
         elif browser_name == 'firefox':
             service = FirefoxService("C:/browserdriver/geckodriver.exe")
@@ -75,6 +80,7 @@ def setup_browser(request):
             service = EdgeService("C:/browserdriver/msedgedriver.exe")
             driver = webdriver.Edge(service=service, options=setup_browser_options(browser_name, run_env))
     elif run_env == 'docker':
+        print('Running in DOCKER')
         if browser_name in ['chrome', 'firefox', 'edge']:
             driver = webdriver.Remote(
                 command_executor="http://localhost:4444",
