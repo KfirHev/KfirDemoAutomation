@@ -4,12 +4,13 @@ FROM python:3.12
 # Set the working directory
 WORKDIR /app
 
-# Install tzdata and venv, and create a virtual environment
-RUN apt-get update && apt-get install -y tzdata python3-venv && \
-    # Set the time zone to Israel
+# Copy the requirements file into the container
+COPY requirements.txt .
+
+# Install venv and create a virtual environment, and set the timezone
+RUN apt-get update && apt-get install -y python3-venv tzdata && \
     ln -fs /usr/share/zoneinfo/Asia/Jerusalem /etc/localtime && \
-    echo "Asia/Jerusalem" > /etc/timezone && \
-    # Create the virtual environment
+    dpkg-reconfigure --frontend noninteractive tzdata && \
     python3 -m venv /venv
 
 # Ensure the virtual environment is activated and install project dependencies
