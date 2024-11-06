@@ -1,0 +1,48 @@
+# Use the official Python image as a base
+FROM python:3.12
+
+# Set the working directory
+WORKDIR /app
+
+# Copy the requirements file into the container
+COPY requirements.txt .
+
+# Install basic dependencies, including timezone configuration
+RUN apt-get update && \
+    apt-get install -y python3-venv tzdata wget unzip gnupg && \
+    ln -fs /usr/share/zoneinfo/Asia/Jerusalem /etc/localtime && \
+    DEBIAN_FRONTEND=noninteractive dpkg-reconfigure tzdata
+
+# Install Chrome
+RUN wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | gpg --dearmor -o /usr/share/keyrings/google.gpg && \
+    echo "deb [signed-by=/usr/share/keyrings/google.gpg] http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google-chrome.list && \
+    apt-get update && \
+    apt-get install -y google-chrome-stable
+
+RUN apt-get update && apt-get install -y \
+    libnss3 \
+    libxss1 \
+    libappindicator3-1 \
+    fonts-liberation \
+    libasound2 \
+    xdg-utils
+
+
+# Download the latest ChromeDriver
+RUN LATEST_DRIVER_VERSION=$(wget -qO- https://chromedriver.storage.googleapis.com/LATEST_RELEASE) && \
+    wget -O /tmp/chromedriver.zip "https://chromedriver.storage.googleapis.com/${LATEST_DRIVER_VERSION}/chromedriver_linux64.zip" && \
+    unzip /tmp/chromedriver.zip -d /usr/local/bin/ && \
+    rm /tmp/chromedriver.zip
+
+# Create and activate virtual environment, and install Python dependencies
+RUN python3 -m venv /venv && \
+    /venv/bin/pip install --no-cache-dir -r requirements.txt
+
+# Set the PATH to include the virtual environment
+ENV PATH="/venv/bin:$PATH"
+
+# Copy the rest of the application code into the container
+COPY . .
+
+# Command to run tests
+# CMD ["pytest", "--maxfail=1", "--disable-warnings", "-v", "--html=Reports/report.html"]
