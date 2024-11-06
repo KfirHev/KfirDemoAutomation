@@ -45,4 +45,4 @@ ENV PATH="/venv/bin:$PATH"
 COPY . .
 
 # Command to run tests
-# CMD ["pytest", "--maxfail=1", "--disable-warnings", "-v", "--html=Reports/report.html"]
+# CMD ["pytest", "--run_env=local" "--maxfail=1", "--disable-warnings", "-v", "--html=Reports/report.html"]
