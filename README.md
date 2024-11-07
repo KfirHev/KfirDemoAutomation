@@ -84,10 +84,7 @@ KfirDemoAutomation/
 
 **Example run via PyCharm**
 
-<video width="640" height="360" controls>
-  <source src="https://github.com/user-attachments/assets/d38be0c4-8d73-4655-af75-31a1b375bab2" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+https://github.com/user-attachments/assets/d38be0c4-8d73-4655-af75-31a1b375bab2
 
 ### Running Tests
 
