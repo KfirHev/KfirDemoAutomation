@@ -58,7 +58,7 @@ KfirDemoAutomation/
 ![TestFullPurchas](https://github.com/user-attachments/assets/37226fe2-e876-40e3-be14-ed91e3a1c0cf)
 
 
-###🛠 Prerequisites
+###🛠Prerequisites
 - **Python 3.x**  
 - **Selenium WebDriver**  
 - **Docker** (optional, for containerized tests)  
