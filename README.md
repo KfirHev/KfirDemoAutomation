@@ -171,6 +171,7 @@ Start the container for your desired browser:
    
     ```
  **For Selenium Grid Setup: Use the Dockerfile_python image and ensure the Selenium Grid container(s) for your desired browser(s) are running.**
+ 
  **For Local Execution: Use the Dockerfile_all_in_one image, which includes ChromeDriver and Chrome for standalone execution.**
 </details> 
 
@@ -189,6 +190,7 @@ To run tests using Jenkins, follow these steps to set up the environment and con
 - **Docker images** for your project built and pushed to a registry or available locally.
 
 <details>
+<summary>Click to expand for Jenkins Instructions</summary>
 (Instructions will follow in the near future)
 </details> 
 
