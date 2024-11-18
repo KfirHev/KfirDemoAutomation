@@ -24,7 +24,7 @@ def pytest_addoption(parser):
         "--browser_type", action="store", default="chrome", help="Specify the browser: chrome, firefox, or edge"
     )
     parser.addoption(
-        "--run_env", action="store", default="docker", help="Specify the environment: local or docker"
+        "--run_env", action="store", default="local", help="Specify the environment: local or docker"
     )
 
 
