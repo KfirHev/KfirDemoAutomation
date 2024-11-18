@@ -1,12 +1,13 @@
-import time
-
 import pytest
+import allure
 from PageObjects.HomePage import HomePage
 from TestData.CheckOutInfoPageData import CheckOutInfoPageData
 from Utils.BaseClass import BaseClass
 
 
-
+@allure.feature("Checkout Process")
+@allure.story("Submit Data Check")
+@allure.severity(allure.severity_level.CRITICAL)
 class TestSubmitData(BaseClass):
     """Tests for the Products Page remove functionality."""
 

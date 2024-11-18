@@ -1,11 +1,15 @@
 import time
 import pytest
+import allure
 from PageObjects.HomePage import HomePage
 from TestData.ProductPageData import ProductPageData
 from Utils.BaseClass import BaseClass
 
 
 @pytest.mark.xfail
+@allure.feature("Product Sorting")
+@allure.story("Sorting Response Time Check")
+@allure.severity(allure.severity_level.CRITICAL)
 class TestProductPageSortPerformance(BaseClass):
     """
     Tests the performance of product sorting functionality by measuring response times.

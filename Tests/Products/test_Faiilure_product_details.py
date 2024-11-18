@@ -1,10 +1,14 @@
 import pytest
+import allure
 from PageObjects.HomePage import HomePage
 from TestData.SingleProductPageData import SingleProductPageData
 from Utils.BaseClass import BaseClass
 
 
 #@pytest.mark.skip
+@allure.feature("Product details")
+@allure.story("Product details Discrepancy Check - Should Fail")
+@allure.severity(allure.severity_level.CRITICAL)
 class TestCheckProductDetailsFailure(BaseClass):
     """
     Tests for verifying product details and add-to-cart functionality on the Products Page.

@@ -1,12 +1,15 @@
 import time
-
 import pytest
+import allure
 from PageObjects.HomePage import HomePage
 from TestData.ProductPageData import ProductPageData
 from Utils.BaseClass import BaseClass
 
 
 #@pytest.mark.skip
+@allure.feature("Product Add")
+@allure.story("Add Products Check")
+@allure.severity(allure.severity_level.CRITICAL)
 class TestProductsPageAdd(BaseClass):
     """Tests for the Products Page add functionality."""
 

@@ -1,10 +1,14 @@
 import pytest
+import allure
 import time
 from PageObjects.HomePage import HomePage
 from TestData.HomePageData import HomePageData
 from Utils.BaseClass import BaseClass
 
 
+@allure.feature("Login Process")
+@allure.story("Login Latency Check")
+@allure.severity(allure.severity_level.NORMAL)
 @pytest.mark.xfail
 class TestLoginResponseTime(BaseClass):
     """

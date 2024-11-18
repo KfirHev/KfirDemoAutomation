@@ -1,8 +1,11 @@
-import pytest
+import allure
 from PageObjects.HomePage import HomePage
 from Utils.BaseClass import BaseClass
 
 
+@allure.feature("Checkout Process")
+@allure.story("Submit Checkout Information")
+@allure.severity(allure.severity_level.CRITICAL)
 class TestSubmitData(BaseClass):
     """
     Test class for submitting checkout information.
@@ -51,5 +54,3 @@ class TestSubmitData(BaseClass):
         except Exception as e:
             log.error(f"An error occurred during the test: {e}")
             raise  # Re-raise any other exception to fail the test
-
-

@@ -1,10 +1,14 @@
 import time
 import pytest
+import allure
 from PageObjects.HomePage import HomePage
 from Utils.BaseClass import BaseClass
 
 
 #@pytest.mark.skip
+@allure.feature("Product Remove")
+@allure.story("Remove All Products Check")
+@allure.severity(allure.severity_level.CRITICAL)
 class TestProductsPageRemove(BaseClass):
     """Tests for the Products Page remove functionality."""
 

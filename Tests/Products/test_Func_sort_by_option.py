@@ -1,11 +1,15 @@
 import time
 import pytest
+import allure
 from PageObjects.HomePage import HomePage
 from TestData.ProductPageData import ProductPageData
 from Utils.BaseClass import BaseClass
 
 
 #@pytest.mark.skip
+@allure.feature("Product Sorting")
+@allure.story("Product Sorting Option Check")
+@allure.severity(allure.severity_level.CRITICAL)
 class TestProductPageSort(BaseClass):
     """Tests for the Products Page sorting functionality."""
 

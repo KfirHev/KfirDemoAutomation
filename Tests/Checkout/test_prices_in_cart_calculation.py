@@ -1,9 +1,13 @@
 import pytest
+import allure
 from PageObjects.HomePage import HomePage
 from TestData.CheckOutOverviewData import CheckoutOverviewData
 from Utils.BaseClass import BaseClass
 
 
+@allure.feature("Checkout Process")
+@allure.story("Calculate Prices In Cart")
+@allure.severity(allure.severity_level.CRITICAL)
 class TestPriceInCartCalc(BaseClass):
     @pytest.fixture(params=CheckoutOverviewData.test_products)
     def get_data(self, request):

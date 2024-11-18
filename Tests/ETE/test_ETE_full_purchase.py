@@ -1,9 +1,12 @@
-import time
 import pytest
+import allure
 from PageObjects.HomePage import HomePage
 from Utils.BaseClass import BaseClass
 
 
+@allure.feature("ETE")
+@allure.story("Full Purchase Process")
+@allure.severity(allure.severity_level.CRITICAL)
 class TestFullPurchase(BaseClass):
     """
     Test class for performing a full purchase flow, from login to final purchase confirmation.

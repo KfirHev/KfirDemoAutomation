@@ -1,4 +1,5 @@
 import pytest
+import allure
 
 from PageObjects.HomePage import HomePage
 from Utils.BaseClass import BaseClass
@@ -6,6 +7,9 @@ from TestData.HomePageData import HomePageData
 
 
 #@pytest.mark.skip
+@allure.feature("Login Process")
+@allure.story("Login page UI Check")
+@allure.severity(allure.severity_level.NORMAL)
 class TestHomePage(BaseClass):
     """Test suite for the Home Page of the application."""
 

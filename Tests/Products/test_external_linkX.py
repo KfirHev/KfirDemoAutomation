@@ -1,10 +1,14 @@
 import time
 import pytest
+import allure
 from PageObjects.HomePage import HomePage
 from Utils.BaseClass import BaseClass
 
 
 # @pytest.mark.skip
+@allure.feature("External Link")
+@allure.story("Check X Link")
+@allure.severity(allure.severity_level.TRIVIAL)
 class TestLinkToX(BaseClass):
     """
     This test class verifies the functionality of the link to the external website X.

@@ -1,10 +1,13 @@
 import pytest
+import allure
 from PageObjects.HomePage import HomePage
 from TestData.HomePageData import HomePageData
 from Utils.BaseClass import BaseClass
 
 
-
+@allure.feature("Login Process")
+@allure.story("Valid Login Check")
+@allure.severity(allure.severity_level.CRITICAL)
 class TestLogin(BaseClass):
     """
     This class tests the login functionality of the HomePage using valid credentials
