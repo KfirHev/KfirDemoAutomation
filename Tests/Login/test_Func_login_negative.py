@@ -1,35 +1,40 @@
 import pytest
+import allure
 from PageObjects.HomePage import HomePage
 from TestData.HomePageData import HomePageData
 from Utils.BaseClass import BaseClass
 
 
+@allure.feature("Login Process")
+@allure.story("Invalid Login Check Errors")
+@allure.severity(allure.severity_level.NORMAL)
 class TestLogin(BaseClass):
     """
-    This class tests the login functionality of the HomePage using valid credentials
-    and verifies the flow from login to logout.
+    This class tests the login functionality of the HomePage using various invalid credentials,
+    ensuring that the correct error messages are displayed for different login failure scenarios.
     """
 
     @pytest.fixture(params=HomePageData.test_home_page_login)
     def get_data(self, request):
         """
-        Pytest fixture to get data for login tests.
+        Pytest fixture that provides test data for login failure scenarios.
 
-        :param request: Data parameter for the test method.
-        :return: Returns parameterized test data for the test.
+        :param request: The request object that contains the test data.
+        :return: A dictionary containing test data for invalid login attempts.
         """
         return request.param
 
     @staticmethod
     def login_and_verify_error(home_page, username, password, expected_error, log):
         """
-        Helper method to perform login, capture error message, and verify with expected error.
+        Performs login with provided credentials, verifies the resulting error message,
+        and logs the outcome.
 
-        :param home_page: HomePage object to perform login actions.
-        :param username: Username for login attempt.
-        :param password: Password for login attempt.
-        :param expected_error: Expected error message to assert.
-        :param log: Logger object for logging.
+        :param home_page: HomePage object to interact with the login page.
+        :param username: The username for the login attempt.
+        :param password: The password for the login attempt.
+        :param expected_error: The expected error message to be displayed after a failed login.
+        :param log: Logger object used to log information and errors.
         """
         try:
             home_page.login(username, password)
