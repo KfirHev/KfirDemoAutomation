@@ -178,6 +178,21 @@ Start the container for your desired browser:
 - Use `--browser_type` to specify the browser (default is chrome; other options include firefox and edge).
 - Use `--run_env` to choose the environment (default is local; you can also select docker).
 
+### Running Tests Using Jenkins (** instructions will follow in the near future)
+To run tests using Jenkins, follow these steps to set up the environment and configure the necessary Jenkins job. This process will work no matter where your app is located, as long as the required dependencies are met.
+
+#### Prerequisites
+
+- **Jenkins installed and running** (either on a local instance or remote server).
+- **Docker installed** on the machine running Jenkins (if you are using Docker for test execution).
+- **GitHub repository** (or other source control) connected to Jenkins.
+- **Docker images** for your project built and pushed to a registry or available locally.
+
+<details>
+(Instructions will follow in the near future)
+</details> 
+
+
 ### View Reports
 
 
