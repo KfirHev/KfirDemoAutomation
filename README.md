@@ -86,14 +86,93 @@ KfirDemoAutomation/
 
 https://github.com/user-attachments/assets/d38be0c4-8d73-4655-af75-31a1b375bab2
 
-### Running Tests
+### Running Tests from Your Local Environment
 
-1. **To run tests from the command line using Python's virtual environment**:
+**To run tests from the command line using Python's virtual environment**:
    - First, activate the virtual environment by running `. \YourProjectName\.venv\Scripts\activate`.
    - Then, execute the tests by typing `pytest`. (For customization options, refer to the options section below.)
+   
+### Runinng Tests in a Docker container or Docker Selenium Grid 
 
-2. **To run tests in a Docker container**:
-   - Build the Docker image and run the container.
+This project includes Docker configurations to simplify running the automation framework in various environments. It supports both local execution and remote execution using Selenium Grid.
+
+Before proceeding, ensure you have **Docker Desktop** installed and running on your machine. You can download it from [Docker's official website](https://www.docker.com/products/docker-desktop/).
+
+<details>
+<summary>Click to expand for Docker Instructions</summary>
+
+#### Docker Configurations
+
+The project provides two Dockerfiles for different execution environments:
+
+1. **Dockerfile_python**  
+   - Used for running tests on a **Selenium Grid** setup.  
+   - The browser (e.g., Chrome, Firefox, Edge) runs in a separate container.  
+   - Run the project with the command-line option:  
+     ```bash
+     --run_env "docker"
+     ```
+
+2. **Dockerfile_all_in_one**  
+   - Installs all necessary components, including project dependencies, ChromeDriver, and the Chrome browser.  
+   - Ideal for running tests locally within the Docker container, without requiring Selenium Grid.
+
+---
+
+#### Setting Up Selenium Grid
+
+To run tests remotely using Selenium Grid, you need to set up a Selenium Grid container with the desired browser(s). Follow these steps:
+
+#### Pull the Selenium Grid Browser Images
+Run the following commands to pull the required Docker images for Selenium Grid:
+
+- **For Chrome:**
+  ```bash
+  docker pull selenium/standalone-chrome:latest
+- **For Firefox:**
+  ```bash
+  docker pull selenium/standalone-firefox:latest
+- **For Edge:**
+  ```bash
+  docker pull selenium/standalone-edge:latest
+  
+#### Run the Selenium Grid Containers
+
+Start the container for your desired browser:
+
+- **For Chrome ,FireFox, Edge:**
+  ```bash
+  docker run --rm -d -p 4444:4444 -p 7900:7900 --shm-size="2g" selenium/standalone-chrome:latest
+  docker run --rm -d -p 4444:4444 -p 7900:7900 --shm-size="2g" selenium/standalone-firefox:latest
+  docker run --rm -d -p 4444:4444 -p 7900:7900 --shm-size="2g" selenium/standalone-edge:latest
+
+**You can open the Selenium Grid app and watch it run on your browser using [http://localhost:4444/](http://localhost:4444/)**
+
+#### Building and Running the Project Containers
+
+1. **Building the Image**  
+   Navigate to the project directory and build the Docker image based on the desired configuration:
+
+   - **For `Dockerfile_python`:**
+     ```bash
+     docker build -f Dockerfile_python -t your_env_name_image .
+     ```
+
+   - **For `Dockerfile_all_in_one`:**
+     ```bash
+     docker build -f Dockerfile_all_in_one -t your_env_name_image .
+     ```
+
+2. **Running the Container**  
+   Run the Docker container interactively:
+
+   ```bash
+     docker run --network="host" -it your_env_name_image
+   
+    ```
+ **For Selenium Grid Setup: Use the Dockerfile_python image and ensure the Selenium Grid container(s) for your desired browser(s) are running.**
+ **For Local Execution: Use the Dockerfile_all_in_one image, which includes ChromeDriver and Chrome for standalone execution.**
+</details> 
 
 **Customizable Options**:
 - Use `--browser_type` to specify the browser (default is chrome; other options include firefox and edge).
@@ -127,13 +206,13 @@ https://github.com/user-attachments/assets/c686d899-91cc-4702-9b9a-3215943d28af
    
      ![image](https://github.com/user-attachments/assets/14e6db20-42f4-4823-a63d-b67cf055fb84)
 
-## Planned Enhancements
+## 🚀 Planned Enhancements
 
 Future updates will aim to extend the functionality and robustness of this framework, with potential additions including:
 
-- Demonstration of API testing and backend database integration
-- Enhanced reporting capabilities, such as Allure integration for richer test insights
-- Detailed README updates, including Docker command instructions ,setting up Jenkins job/pipeline and example screenshots for a clearer demo experience 
+- Enhanced reporting capabilities using allure reports was **integrated to the tests** (Details will follow)
+- Detailed README updates, including Docker command instructions ,setting up Jenkins job/pipeline and example screenshots for a clearer demo experience
+- Demonstration of API testing and backend database integration will be introduced in another public project (Link to the project will be added here)
 
 ## Contributing
 
