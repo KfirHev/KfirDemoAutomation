@@ -1,6 +1,6 @@
 # KfirDemoAutomation
 
-![image](https://github.com/user-attachments/assets/ba8df7ef-9fd9-4831-b6cf-17f487e01f27)
+![image](https://github.com/user-attachments/assets/a5834843-359a-472a-a378-563882b884b8)
 
 **An automation framework for testing [SauceDemo](https://www.saucedemo.com/) with Selenium and pytest.**  
 Designed for high flexibility and modularity, the framework facilitates efficient browser-based testing and provides HTML reports with screenshots and logging for thorough test insights.  
