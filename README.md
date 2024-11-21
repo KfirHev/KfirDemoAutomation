@@ -228,7 +228,7 @@ https://github.com/user-attachments/assets/c686d899-91cc-4702-9b9a-3215943d28af
 
 </details>   
 
-     ![image](https://github.com/user-attachments/assets/14e6db20-42f4-4823-a63d-b67cf055fb84)
+![image](https://github.com/user-attachments/assets/14e6db20-42f4-4823-a63d-b67cf055fb84)
 
 #### Allure Reports 
 <details>
