@@ -202,6 +202,8 @@ https://github.com/user-attachments/assets/c686d899-91cc-4702-9b9a-3215943d28af
 
 
 #### HTML Reports
+<details>
+<summary>Click to expand instructions</summary>
 
 1. Browse to the project Reports folder and choose the report ,you can drag and drop it to any browser to view it.
 
@@ -210,8 +212,11 @@ https://github.com/user-attachments/assets/c686d899-91cc-4702-9b9a-3215943d28af
 3. The report include all the run data for each test case and their status
 
 4. Upon failure the report will include the screenshot when it failed and the specific error logs
+</details> 
 
 #### Jenkins Reports 
+<details>
+<summary>Click to expand instructions</summary>
 
 1. Access Jenkins: Open your Jenkins instance and navigate to the project for which the tests were executed.
 
@@ -220,8 +225,16 @@ https://github.com/user-attachments/assets/c686d899-91cc-4702-9b9a-3215943d28af
  - Inside the build details, you can find links to test reports, typically labeled as “Test Results” or under “HTML Publisher Plugin” if configured.
 3. Detailed Test Analysis: The Jenkins report displays test statuses, including any test failures, along with logs. You’ll also see an option to view error screenshots and logs for failed tests if configured to save these artifacts.
 4. Trend Analysis: Jenkins provides a view of historical test data, helping track trends in test pass/fail rates over time, enabling insights into project quality and stability.
-   
+
+</details>   
+
      ![image](https://github.com/user-attachments/assets/14e6db20-42f4-4823-a63d-b67cf055fb84)
+
+#### Allure Reports 
+<details>
+<summary>Click to expand instructions TBD</summary>
+
+</details> 
 
 ## 🚀 Planned Enhancements
 
