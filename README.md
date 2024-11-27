@@ -236,6 +236,8 @@ https://github.com/user-attachments/assets/c686d899-91cc-4702-9b9a-3215943d28af
 
 </details> 
 
+![Allure ](https://github.com/user-attachments/assets/2f277021-6151-4a44-b198-813cac386873)
+
 ## 🚀 Planned Enhancements
 
 Future updates will aim to extend the functionality and robustness of this framework, with potential additions including:
