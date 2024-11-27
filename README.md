@@ -232,9 +232,31 @@ https://github.com/user-attachments/assets/c686d899-91cc-4702-9b9a-3215943d28af
 
 #### Allure Reports 
 <details>
-<summary>Click to expand instructions TBD</summary>
+<summary>Click to expand instructions</summary>
 
+#### How to Use Allure Reports on Windows
+
+1. **Run the Script from the Project Root**  
+   To generate the Allure report, run the attached PowerShell script from the project root folder using the following command:
+   ```powershell
+   .\allure_run_ps1
+   ```
+   If you're familiar with the script and know what you're doing, you can edit the run parameters directly within the PowerShell script.
+2. **View the report**  
+   At the end of the run, the report will automatically open in your default web browser.
+3. **Manually generate the report**  
+   If you want to manually generate the report, use the following command:
+   ```powershell
+   allure serve PATH_TO_REPORT
+   ```
+Advise : The Allure report keeps a history of test runs, allowing you to view results for each run. Each new test run will be stored and can be reviewed as part of the history.
+
+For more info:
+- [Allure Pytest Integration](https://allurereport.org/docs/pytest/)
+- [Allure Report Generation Docs](https://allurereport.org/docs/) 
 </details> 
+
+![Allure ](https://github.com/user-attachments/assets/2f277021-6151-4a44-b198-813cac386873)
 
 ## 🚀 Planned Enhancements
 
