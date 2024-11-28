@@ -3,8 +3,9 @@
 ![image](https://github.com/user-attachments/assets/a5834843-359a-472a-a378-563882b884b8)
 
 **An automation framework for testing [SauceDemo](https://www.saucedemo.com/) with Selenium and pytest.**  
-Designed for high flexibility and modularity, the framework facilitates efficient browser-based testing and provides HTML reports with screenshots and logging for thorough test insights.  
-This framework's infrastructure can support any web-based application with minimal modifications.  
+It supports multi-browser testing, CI/CD pipelines, and containerization, offering scalable and flexible test execution. 
+The framework generates multiple reports, including HTML and Allure, with detailed logs and screenshots.
+It demonstrates functional, E2E, and performance testing and is easily adaptable to any web-based application.
 
 ## Project Structure
 
